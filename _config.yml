@@ -1,4 +1,4 @@
-baseurl: /mobile
+baseurl: /
 safe: true
 lsi: false
 pygments: true
