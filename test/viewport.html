@@ -40,6 +40,7 @@
 			//alert(e.type);
 			//document.getElementById('label').innerHTML = window.orientation;
 
+
 			if(window.orientation !== 0 ) {
 				ele.content = 'initial-scale=4.0';
 			}else {
@@ -48,7 +49,7 @@
 		}
 
 		//webkit移动版 差不多都支持
-		window.addEventListener('load',fn,false);
+		//window.addEventListener('load',fn,false);
 		window.addEventListener('orientationchange',fn,false);
 
 		</script>
