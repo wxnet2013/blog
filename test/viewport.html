@@ -35,15 +35,15 @@
 		    rate = width / height;
 
 
-
+		var ele = document.querySelector('meta[name="viewport"]');
 		function fn(e){
 			//alert(e.type);
 			//document.getElementById('label').innerHTML = window.orientation;
 
 			if(window.orientation !== 0 ) {
-				document.querySelector('meta[name="viewport"]').content = 'initial-scale=4.0';
+				ele.content = 'initial-scale=4.0';
 			}else {
-				document.querySelector('meta[name="viewport"]').content = 'initial-scale=1.0';
+				ele.content = 'initial-scale=1.0';
 			}
 		}
 
