@@ -5,10 +5,12 @@ title: 旋转屏幕事件测试
 
 <div id="label"></div>
 <script>
-function fn(){
+function fn(e){
+	alert(e.type);
 	document.getElementById('label').innerHTML = window.orientation;
 }
 
+//webkit移动版 差不多都支持
 window.addEventListener('load',fn,false);
 window.addEventListener('orientationchange',fn,false);
 </script>
