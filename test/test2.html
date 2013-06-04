@@ -844,10 +844,7 @@ ResponseCss = function(data){
 		function fn(e){
 			//alert(e.type);
 			//document.getElementById('label').innerHTML = window.orientation;
-			rate = '' + rate.toFixed(1);
-
-			alert(rate);
-			
+			rate = '' + rate.toFixed(1);		
 			ele.content = window.orientation !== 0 ?
 							'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
 								'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
