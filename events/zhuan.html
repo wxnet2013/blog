@@ -1,0 +1,14 @@
+---
+layout: webapp
+title: 旋转屏幕事件测试
+---
+
+<div id="label"></div>
+<script>
+function fn(){
+	document.getElementById('label').innerHTML = window.orientation;
+}
+
+window.addEventListener('load',fn,false);
+window.addEventListener('orientationchange',fn,false);
+</script>
