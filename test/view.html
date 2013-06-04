@@ -18,3 +18,13 @@ body,html {
 <div class="pannel">
 	480*320
 </div>
+
+<script>
+var screenAttrs = 'availHeight,availLeft,availTop,availWidth,colorDepth,height,pixelDepth,width'.split(',');
+var arr = [];
+for(var i=0;i<8;i++){
+	arr.push(screenAttrs[i] + " : " + Screen[screenAttrs[i]]);
+}
+
+document.write(arr.join('<br>'));
+</script>
