@@ -32,15 +32,15 @@
 		//document.write(arr.join('<br>'));
 		var width = Math.min(screen.width,screen.height),
 		    height = Math.max(screen.width,screen.height),
-		    rate = width / height;
+		    rate = height / width;
 
 
 		var ele = document.querySelector('meta[name="viewport"]');
 		function fn(e){
 			//alert(e.type);
 			//document.getElementById('label').innerHTML = window.orientation;
-
-
+			alert(rate);
+			
 			if(window.orientation !== 0 ) {
 				ele.content = 'width=device-width, initial-scale=4.0, maximum-scale=4.0, minimum-scale=4.0 ';
 			}else {
