@@ -8,6 +8,8 @@ title: 旋转屏幕事件测试
 function fn(e){
 	alert(e.type);
 	document.getElementById('label').innerHTML = window.orientation;
+
+	document.querySelector('meta[name="viewport"]').content = '';
 }
 
 //webkit移动版 差不多都支持
