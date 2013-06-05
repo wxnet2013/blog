@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>zepto.js test</title>
+
+  <meta content="width=device-width,initial-scale=1.0" name="viewport" />
   <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css">
 
   <script src="http://zeptojs.com/zepto.min.js"></script>
@@ -52,12 +54,10 @@
 
         div.html('')
         ok(' ', document.getElementById('htmltest2').innerHTML)
-
         ok(" ", $('#htmltest3').html())
 
        
         //ok(null, $('doesnotexist').html(),'passed');
-
         div.html('yowza')
         div.html(function(idx, html){
           return html.toUpperCase()
@@ -80,9 +80,6 @@
   	});
 
 	test( "value test", function() {
-	  	
-	  	
-
 	  	//ok( $('#val').val() == "test", "Passed!" );
 	    var input = $('#attr_val')
         ok('Hello World', input.val(),'passed');
@@ -90,16 +87,12 @@
         //ok('', input.val(),'passed');
         input.get(0).value = 'Hello again';
         ok('Hello again', input.val(),'passed');
-
         input.val(function(i, val){ return val.replace('Hello', 'Bye') })
         ok('Bye again', input.val(),'passed');
-
         //ok($('non-existent').val(),'passed');
-
         var multiple =
           $('<select multiple><option selected>1</option><option value=2 selected="selected">a</option><option>3</option></select>')
         ok(['1','2'], multiple.val(),'passed');
-
         multiple.find('option')[0].selected = false
         ok(['2'], multiple.val(),'passed');
 	});
