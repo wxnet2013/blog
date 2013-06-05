@@ -2,7 +2,7 @@
 <html>
 　　<head>
 　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta content="initial-scale=5.0" name="viewport" />
+		<meta content="width=device-width,initial-scale=1.0" name="viewport" />
 　　　　<title>viewport</title>
 　　</head>
 　　<body>
@@ -43,14 +43,14 @@
 			//document.getElementById('label').innerHTML = window.orientation;
 			//rate = '' + rate.toFixed(1);			
 			ele.content = window.orientation !== 0 ?
-							'width=device-width,initial-scale=1.8, user-scalable=no' :
-								'width=device-width,initial-scale=1.0, user-scalable=no';
+							'width=device-width,initial-scale=1.8' :
+								'width=device-width,initial-scale=1.0';
 								
 		}
 
 		//webkit移动版 差不多都支持
-		//window.addEventListener('load',fn,false);
-		//window.addEventListener('orientationchange',fn,false);
+		window.addEventListener('load',fn,false);
+		window.addEventListener('orientationchange',fn,false);
 
 		/*
 		window.addEventListener('load',function() {
