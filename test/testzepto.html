@@ -36,7 +36,7 @@
   <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
   <script>
 
-  	test('find test', function(){
+  	test('find', function(){
   		var found = $('p#find1').find('span.findme');
         ok(4, found.length);
         ok('1', found.get(0).innerHTML)
@@ -48,7 +48,7 @@
         ok(11, found.length);
   	});
 
-  	test('html test', function(){
+  	test('html', function(){
   		var div = $('div.htmltest')
         div.html('yowza');
 
@@ -83,7 +83,7 @@
 
   	});
 
-    test('text test', function(t){
+    test('text', function(t){
         ok('Here is some text', $('div.texttest').text())
         ok('And some more', $('#texttest2').text())
 
@@ -96,7 +96,7 @@
         ok(' ', $('#texttest2').text())
     });
 
-	test( "value test", function() {
+	test( "value", function() {
 	  	//ok( $('#val').val() == "test", "Passed!" );
 	    var input = $('#attr_val')
         ok('Hello World', input.val(),'passed');
@@ -115,7 +115,7 @@
 	});
 
 
-  test('attr test', function(t){
+  test('attr', function(t){
         var els = $('#attr_1, #attr_2')
 
         ok('someId1', els.attr("data-id"))
@@ -146,10 +146,10 @@
         })
         ok('0id', els.attr('data-id'))
         ok('1id', $('#attr_2').attr('data-id'))
-      });
+    });
 
 
-    test('dollarEach test', function(t){
+    test('dollarEach', function(t){
         var array = ['a','b','c'], object = { a: 1, b: 2, c: 3 }, result
 
         result = []
