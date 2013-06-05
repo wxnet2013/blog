@@ -27,6 +27,8 @@
     <span>3<span>4</span></span>
     <span>5<span>6</span></span>
   	</p>
+    <div id="attr_1" data-id="someId1" data-name="someName1"></div>
+    <div id="attr_2" data-id="someId2" data-name="someName2"></div>
   </div>
   <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
   <script>
@@ -95,6 +97,40 @@
         multiple.find('option')[0].selected = false
         ok(['2'], multiple.val(),'passed');
 	});
+
+
+  test('attr test', function(t){
+        var els = $('#attr_1, #attr_2')
+
+        ok('someId1', els.attr("data-id"))
+        ok('someName1', els.attr("data-name"))
+
+        els.attr("data-id","someOtherId")
+        els.attr("data-name","someOtherName")
+
+        ok('someOtherId', els.attr("data-id"))
+        ok('someOtherName', els.attr("data-name"))
+        ok('someOtherId', $('#attr_2').attr('data-id'))
+
+        //ok(els.attr("nonExistentAttribute"),null)
+
+        els.attr("data-id", false)
+        ok("false", els.attr("data-id"))
+
+        els.attr("data-id", 0)
+        ok("0", els.attr("data-id"))
+
+        els.attr({ 'data-id': 'id', 'data-name': 'name' })
+        ok('id', els.attr("data-id"))
+        ok('name', els.attr("data-name"))
+        ok('id', $('#attr_2').attr('data-id'))
+
+        els.attr('data-id', function(idx,oldvalue){
+          return idx+oldvalue
+        })
+        ok('0id', els.attr('data-id'))
+        ok('1id', $('#attr_2').attr('data-id'))
+      });
   </script>
 </body>
 </html>
