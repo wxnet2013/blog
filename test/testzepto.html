@@ -29,6 +29,9 @@
   	</p>
     <div id="attr_1" data-id="someId1" data-name="someName1"></div>
     <div id="attr_2" data-id="someId2" data-name="someName2"></div>
+
+      <div id="texttest1" class="texttest"><span>Here <strong>is</strong> some text</span></div>
+  <div id="texttest2" class="texttest">And <em>some more</em></div>
   </div>
   <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
   <script>
@@ -79,6 +82,19 @@
 
 
   	});
+
+    test('text test', function(t){
+        ok('Here is some text', $('div.texttest').text())
+        ok('And some more', $('#texttest2').text())
+
+        $('div.texttest').text("Let's set it")
+        ok("Let's set it", $('#texttest1').text())
+        ok("Let's set it", $('#texttest2').text())
+
+        $('#texttest2').text('')
+        ok("Let's set it", $('div.texttest').text())
+        ok(' ', $('#texttest2').text())
+    });
 
 	test( "value test", function() {
 	  	//ok( $('#val').val() == "test", "Passed!" );
@@ -131,6 +147,35 @@
         ok('0id', els.attr('data-id'))
         ok('1id', $('#attr_2').attr('data-id'))
       });
+
+
+    test('dollarEach test', function(t){
+        var array = ['a','b','c'], object = { a: 1, b: 2, c: 3 }, result
+
+        result = []
+        $.each(array, function(idx, val){
+          result.push(idx)
+          result.push(val)
+        })
+        ok('0a1b2c', result.join(''))
+
+        result = []
+        $.each(object, function(key, val){
+          result.push(key)
+          result.push(val)
+        })
+        ok('a1b2c3', result.join(''))
+
+        result = []
+        $.each(array, function(idx, val){
+          result.push(idx)
+          result.push(val)
+          return idx<1
+        })
+        ok('0a1b', result.join(''))
+
+        ok('abc', $.each(array, function(){}).join(''))
+    });
   </script>
 </body>
 </html>
