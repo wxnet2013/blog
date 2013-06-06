@@ -12,6 +12,7 @@
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
   <div style="position:absolute;left:-2000px;">
+    <div id="some_element"></div>
   	<div id="htmltest1" class="htmltest">test</div>
   	<div id="htmltest2" class="htmltest">test</div>
   	<input id="attr_val" value="Hello World">
@@ -176,6 +177,91 @@
 
         ok('abc', $.each(array, function(){}).join(''))
     });
+
+
+    test('hasClass',function(){
+        var el = $('#some_element')
+        el.addClass('green')
+
+        ok(true, el.hasClass('green'))
+        ok(true, !el.hasClass('orange'))
+
+        el.addClass('orange')
+        ok(true, el.hasClass('green'))
+        ok(true, el.hasClass('orange'))
+
+        el = $(document.body)
+        ok(true, !el.hasClass('orange'), "body shouldn't have the class")
+        el = el.add('#some_element')
+        ok(true, el.hasClass('orange'), "an element in collection has the class")
+    });
+
+    test('HasClassEmpty', function(){
+        var z = $('#doesnotexist')
+        ok(0, z.size())
+        ok(false, z.hasClass('a'))
+    });
+
+    test('ToggleClass', function(t){
+        var el = $('#toggle_element').removeClass()
+
+        //t.assertIdentical(el, el.toggleClass('green'))
+        ok(true,el.hasClass('green'))
+        ok(false,el.hasClass('orange'))
+
+        el.toggleClass('orange')
+        ok(true,el.hasClass('green'))
+        ok(true,el.hasClass('orange'))
+
+        el.toggleClass('green')
+        ok(false,el.hasClass('green'))
+        ok(true,el.hasClass('orange'))
+
+        el.toggleClass('orange')
+        ok(false,el.hasClass('green'))
+        ok(false,el.hasClass('orange'))
+
+        el.toggleClass('orange green')
+        ok(true,el.hasClass('orange'))
+        ok(true,el.hasClass('green'))
+
+        el.toggleClass('orange green blue')
+        ok(false,el.hasClass('orange'))
+        ok(false,el.hasClass('green'))
+        ok(true,el.hasClass('blue'))
+
+        el.removeClass()
+
+        el.toggleClass('orange', false)
+        ok(false,el.hasClass('orange'))
+        el.toggleClass('orange', false)
+        ok(false,el.hasClass('orange'))
+
+        el.toggleClass('orange', true)
+        ok(true,el.hasClass('orange'))
+        el.toggleClass('orange', true)
+        ok(true,el.hasClass('orange'))
+
+        //function argument
+        el.toggleClass(function(idx,classes){
+          //t.assertIdentical(el.get(0), this)
+          //test original classes are being passed
+          ok('orange', this.className)
+          return "brown"
+        })
+
+        ok(true,el.hasClass('brown'))
+
+        el.toggleClass(function(idx,classes){
+          return "yellow"
+        }, false)
+        ok(false,el.hasClass('yellow'))
+
+        el.toggleClass(function(idx,classes){
+          return "yellow"
+        }, true)
+        ok(true,el.hasClass('yellow'))
+      }
   </script>
 </body>
 </html>
