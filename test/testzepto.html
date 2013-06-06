@@ -34,6 +34,7 @@
 
       <div id="texttest1" class="texttest"><span>Here <strong>is</strong> some text</span></div>
   <div id="texttest2" class="texttest">And <em>some more</em></div>
+    <div id="insertbeforeinsertafter_container"><div id="insertbeforeinsertafter"></div></div>
   </div>
   <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
   <script>
@@ -264,6 +265,57 @@
           return "yellow"
         }, true)
         equal(true,el.hasClass('yellow'))
+      });
+
+      test('insertBeforeInsertAfter', function(){
+        //testing with Zepto object
+        function div(contents){
+          var el = document.createElement('div')
+          el.innerHTML = contents
+          return el
+        }
+
+        var ib = $(div('insertbefore'))
+        var ia = $(div('insertafter'))
+
+        var ibia = $('#insertbeforeinsertafter')
+        var ib2 = ib.insertBefore(ibia)
+        var ia2 = ia.insertAfter(ibia)
+
+        // Test the object returned is correct for method chaining
+        ok(
+          '<div>insertbefore</div><div id="insertbeforeinsertafter">'+
+          '</div><div>insertafter</div>',
+          $('#insertbeforeinsertafter_container').html()
+        )
+
+        //testing with a zepto object of more than one element as parameter
+        $(document.body).append('<div class="insertbefore">insertbefore1</div><div class="insertbefore">insertbefore2</div>')
+        $(document.body).append('<div class="insertafter">insertafter1</div><div class="insertafter">insertafter2</div>')
+
+        $('#insertbeforeinsertafter_container').html('<div id="insertbeforeinsertafter"></div>')
+
+        $('.insertbefore').insertBefore($('#insertbeforeinsertafter'))
+        $('.insertafter').insertAfter($('#insertbeforeinsertafter'))
+
+        ok(
+          '<div class="insertbefore">insertbefore1</div><div class="insertbefore">insertbefore2</div>'+
+          '<div id="insertbeforeinsertafter"></div><div class="insertafter">insertafter1</div>'+
+          '<div class="insertafter">insertafter2</div>',
+          $('#insertbeforeinsertafter_container').html()
+        )
+
+        //testing with a selector as parameter
+        $('#insertbeforeinsertafter_container').html('<div id="insertbeforeinsertafter"></div>')
+
+        ib.insertBefore('#insertbeforeinsertafter')
+        ia.insertAfter('#insertbeforeinsertafter')
+
+        ok(
+          '<div>insertbefore</div><div id="insertbeforeinsertafter">'+
+          '</div><div>insertafter</div>',
+          $('#insertbeforeinsertafter_container').html()
+        )
       });
   </script>
 </body>
