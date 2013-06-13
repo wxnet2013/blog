@@ -85,7 +85,7 @@
       //alert(e.type);
       //document.getElementById('label').innerHTML = window.orientation;
       rate = '' + rate.toFixed(1);    
-      alert(rate);
+
       ele.content = window.orientation !== 0 ?
               'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
                 'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
@@ -101,6 +101,7 @@
       var ele = document.getElementById('css'),link;
 
       ele.parentNode.removeChild(ele);
+      
       if(window.orientation !== 0){
         
         
@@ -111,7 +112,7 @@
         link.href = "http://wxnet.me/stylesheets/640.css";
         document.getElementsByTagName("body").item(0).appednChild(link);
 
-      }else {
+      } else {
         
         //link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
         link = document.createElement("link");
