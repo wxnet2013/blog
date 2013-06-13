@@ -86,9 +86,7 @@
       //document.getElementById('label').innerHTML = window.orientation;
       rate = '' + rate.toFixed(1);    
 
-      ele.content = window.orientation !== 0 ?
-              'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
-                'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
+
 
 
       /*
@@ -103,15 +101,12 @@
       ele.parentNode.removeChild(ele);
       
       if(window.orientation !== 0){
-        
-        
         link = document.createElement("link");
         link.rel = "stylesheet";
         link.id = 'css';
         link.type = "text/css";
         link.href = "http://wxnet.me/stylesheets/640.css";
         document.getElementsByTagName("body").item(0).appednChild(link);
-
       } else {
         
         //link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
@@ -122,6 +117,11 @@
         link.href = "http://wxnet.me/stylesheets/320.css";
         document.getElementsByTagName("body").item(0).appednChild(link);
       }
+
+
+            ele.content = window.orientation !== 0 ?
+              'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
+                'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
                 
     }
 
