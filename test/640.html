@@ -10,10 +10,7 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
 <meta content="telephone=no" name="format-detection" />
 <title>无标题文档</title>
-<!--<link type="text/css" rel="stylesheet" href="style.css" />-->
-<style>
-
-</style>
+<link id="css" type="text/css" rel="stylesheet" href="http://wxnet.me/stylesheets/640.css" />
 </head>
 
 <body>
@@ -83,6 +80,7 @@
 
 
     var ele = document.querySelector('meta[name="viewport"]');
+    var link = document.getElementById('css');
     function fn(e){
       //alert(e.type);
       //document.getElementById('label').innerHTML = window.orientation;
@@ -91,6 +89,12 @@
       ele.content = window.orientation !== 0 ?
               'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
                 'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
+
+      if(window.orientation !== 0){
+        link.setAttribute('href','http://wxnet.me/stylesheets/640.css');
+      }else {
+        link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
+      }
                 
     }
 
