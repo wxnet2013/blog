@@ -128,5 +128,27 @@ i,u,b,em,span,small{ font-weight:normal; font-style:normal; text-decoration:none
   </ul>
 </div>
 <div class="Foot">备案：9001</div>
+
+<script>
+    var width = Math.min(screen.width,screen.height),
+        height = Math.max(screen.width,screen.height),
+        rate = height / width;
+
+
+    var ele = document.querySelector('meta[name="viewport"]');
+    function fn(e){
+      //alert(e.type);
+      //document.getElementById('label').innerHTML = window.orientation;
+      rate = '' + rate.toFixed(1);    
+      ele.content = window.orientation !== 0 ?
+              'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
+                'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
+                
+    }
+
+    //webkit移动版 差不多都支持
+    window.addEventListener('load',fn,false);
+    window.addEventListener('orientationchange',fn,false);
+</script>
 </body>
 </html>
