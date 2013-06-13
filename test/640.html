@@ -99,8 +99,10 @@
       }
       */
       var ele = document.getElementById('css'),link;
+
+      ele.parentNode.removeChild(ele);
       if(window.orientation !== 0){
-        ele.parentNode.removeChild(ele);
+        
         
         link = document.createElement("link");
         link.rel = "stylesheet";
@@ -110,7 +112,7 @@
         document.getElementsByTagName("body").item(0).appednChild(link);
 
       }else {
-        ele.parentNode.removeChild(ele);
+        
         //link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
         link = document.createElement("link");
         link.rel = "stylesheet";
