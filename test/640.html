@@ -90,10 +90,34 @@
               'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
                 'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
 
+
+      /*
       if(window.orientation !== 0){
         link.setAttribute('href','http://wxnet.me/stylesheets/640.css');
       }else {
         link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
+      }
+      */
+      var ele = document.getElementById('css'),link;
+      if(window.orientation !== 0){
+        ele.parentNode.removeChild(ele);
+        
+        link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.id = 'css';
+        link.type = "text/css";
+        link.href = "http://wxnet.me/stylesheets/640.css";
+        document.getElementsByTagName("body").item(0).appednChild(link);
+
+      }else {
+        ele.parentNode.removeChild(ele);
+        //link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
+        link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.id = 'css';
+        link.type = "text/css";
+        link.href = "http://wxnet.me/stylesheets/320.css";
+        document.getElementsByTagName("body").item(0).appednChild(link);
       }
                 
     }
@@ -101,6 +125,8 @@
     //webkit移动版 差不多都支持
     window.addEventListener('load',fn,false);
     window.addEventListener('orientationchange',fn,false);
+
+
 </script>
 </body>
 </html>
