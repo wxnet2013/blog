@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {/* -webkit-text-size-adjust:none;*/}
+body { margin:0; color:#969696; font:12px/20px "\5FAE\8F6F\96C5\9ED1",Arial,sans-serif; background:#f0f4f5;}
+ul,ol,li,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,input,i,u,em,small,sub,sup,input,button,textarea,p,th,td,strong{ margin:0; padding:0; font-style:normal;}
+input{outline:none} 
+a img{border:none;}
+li {list-style:none;}
+div, ul, dl { zoom:1;}
+img,fieldset { border:none; }
+h1,h2,h3,h4,h5,h6{font-size:30px; line-height:30px;}
+select, input, textarea { font-size:12px;}
+select, input, img { vertical-align:middle;}
+a{color:#444;text-decoration:none; outline:none;}
+a:hover{color:#529bef;text-decoration:none;}
+div:after, ul:after, dl:after { content:""; display:block; clear:both; height:0; visibility:hidden;}
+i,u,b,em,span,small{ font-weight:normal; font-style:normal; text-decoration:none; display:inline-block; font-size:12px;}
+.left,.con,.right{ float:left; display:inline;}
+.right{ float:right;}
+
+/**/
+
+.Head,.Focus,.Home-main,.Map,.Foot{ width:640px; margin:0 auto;}.Home-main{ padding:0 20px; width:600px; overflow:hidden;}.Home-main .list{margin-left:-20px; padding-bottom:3px;}
+.Focus{ height:310px; overflow:hidden;}
+.Focus img{ width:640px; height:100%;}
+
+/**/
+
+.title{ padding-top:20px;}
+.title span{ float:right;}
+
+.w290{ box-shadow:2px 2px 3px #ddd; background-color:#fff; height:290px; width:290px; float:left; display:inline; margin:25px 0 0 20px;}
+.w290 dt{ position:relative;}
+.w290 dt,.w290 dt a{ width:290px; height:210px; display:block; overflow:hidden;}.w290 dt img{ width:290px;}
+.w290 dd{ padding:0 15px; padding:0 12px\0; height:36px; line-height:36px; overflow:hidden; font-size:24px;}
+.w290 i,.w290 b{ float:left;}
+.w290 i{ height:19px; margin:1px 0 0 5px; overflow:hidden;}
+.w290 i a{font-size:11px;color:#666;line-height:16px;display:inline-block;height:16px;padding:0 2px; font-weight:bold;border:1px solid #777;border-radius:3px;overflow:hidden; _font-size:12px; _font-weight:normal;}
+.w290:hover i a{ background-color:#333; color:#fff;}
+.w290:hover i a:hover,.w290 i a:hover{ background-color:#539bf0; border:1px solid #539bf0; transition:none; color:#fff;}
+.w290 .d-t b a{ font-size:24px;}
+.w290:hover{ box-shadow:0 0 3px #48a3ef;}
+.bg {background: url(http://i1.letvimg.com/img/201301/31/bg.png) repeat left top;bottom:0;cursor:pointer; height:29px;left:0;position:absolute; width:100%;}
+
+/**/
+
+.Map{ background-color:#e7e7e7; height:80px; overflow:hidden; margin-top:25px;}
+.Map ul{ overflow:hidden; height:80px;}
+.Map li{ float:left; text-align:center; line-height:80px; width:128px;}.Map li a{ color:#959595;}
+.Map li b{ font-size:24px; line-height:30px;}
+.Map li i{ float:right; width:1px; overflow:hidden; background-color:#ddd; height:80px;}
+
+.Foot{ text-align:center; font-size:24px; padding:25px 0;}
