@@ -106,7 +106,7 @@
         link.id = 'css';
         link.type = "text/css";
         link.href = "http://wxnet.me/stylesheets/640.css";
-        document.getElementsByTagName("body").item(0).appednChild(link);
+        document.getElementsByTagName("body").item(0).appendChild(link);
       } else {
         
         //link.setAttribute('href','http://wxnet.me/stylesheets/320.css');
@@ -115,11 +115,11 @@
         link.id = 'css';
         link.type = "text/css";
         link.href = "http://wxnet.me/stylesheets/320.css";
-        document.getElementsByTagName("body").item(0).appednChild(link);
+        document.getElementsByTagName("body").item(0).appendChild(link);
       }
 
 
-            ele.content = window.orientation !== 0 ?
+      ele.content = window.orientation !== 0 ?
               'initial-scale='+rate+', maximum-scale='+rate+', minimum-scale='+rate+', user-scalable=no' :
                 'initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no';
                 
