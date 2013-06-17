@@ -21,7 +21,7 @@ i,u,b,em,span,small{ font-weight:normal; font-style:normal; text-decoration:none
 
 /**/
 
-.Head,.Focus,.Home-main,.Map,.Foot{ width:480px; margin:0 auto;}.Home-main{ padding:0 20px; width:600px; overflow:hidden;}.Home-main .list{margin-left:-20px; padding-bottom:3px;}
+.Head,.Focus,.Home-main,.Map,.Foot{ width:480px; margin:0 auto;}.Home-main{ padding:0 20px; width:480px; overflow:hidden;}.Home-main .list{margin-left:-20px; padding-bottom:3px;}
 .Focus{ height:310px; overflow:hidden;}
 .Focus img{ width:480px; height:100%;}
 
