@@ -119,7 +119,14 @@
       }
 
       */
-      
+
+      ele.parentNode.removeChild(ele);
+
+      ele = document.createElement('meta');
+      ele.setAttribute('name','viewport');
+      document.getElementsByTagName('head')[0].appendChild(ele);
+
+
       ele.content = window.orientation !== 0 ?
               'width=device-width, initial-scale=1.5, maximum-scale=1.5, minimum-scale=1.5, user-scalable=no' :
                 'width=device-width, initial-scale=0.67, maximum-scale=0.67, minimum-scale=0.67, user-scalable=no';
