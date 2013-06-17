@@ -30,9 +30,9 @@ i,u,b,em,span,small{ font-weight:normal; font-style:normal; text-decoration:none
 .title{ padding-top:20px;}
 .title span{ float:right;}
 
-.w290{ box-shadow:2px 2px 3px #ddd; background-color:#fff; height:290px; width:290px; float:left; display:inline; margin:25px 0 0 20px;}
+.w290{ box-shadow:2px 2px 3px #ddd; background-color:#fff; height:217px; width:217px; float:left; display:inline; margin:25px 0 0 20px;}
 .w290 dt{ position:relative;}
-.w290 dt,.w290 dt a{ width:290px; height:210px; display:block; overflow:hidden;}.w290 dt img{ width:290px;}
+.w290 dt,.w290 dt a{ width:217px; height:210px; display:block; overflow:hidden;}.w290 dt img{ width:217px;}
 .w290 dd{ padding:0 15px; padding:0 12px\0; height:36px; line-height:36px; overflow:hidden; font-size:24px;}
 .w290 i,.w290 b{ float:left;}
 .w290 i{ height:19px; margin:1px 0 0 5px; overflow:hidden;}
