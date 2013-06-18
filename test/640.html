@@ -5,7 +5,7 @@
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
 <!--meta content="width=480" name="viewport" /--> 
-<meta content="width=device-width, initial-scale=0.67, minimum-scale=0.67, maximum-scale=0.67" name="viewport" /> 
+<!--meta content="width=device-width, initial-scale=0.67, minimum-scale=0.67, maximum-scale=0.67" name="viewport" /--> 
 <meta content="yes" name="apple-mobile-web-app-capable" /> 
 <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
 <meta content="telephone=no" name="format-detection" />
@@ -23,8 +23,14 @@ html { overflow-x:hiddden; overflow-y:scroll; }
 @media screen and (orientation:landscape){
     /*g7 ok、华为 报错*/
     
+    /*
     .Home-main {
       width:100%;
+    }
+    */
+
+    html {
+     zoom:0.65;
     }
     
     /*
@@ -37,11 +43,16 @@ html { overflow-x:hiddden; overflow-y:scroll; }
 
 
 @media screen and (orientation:portrait){
-  
+    
+   html {
+    zoom:1.5;
+   }
+   /*
    @viewport {
     width: device-width;
     initial-scale: 0.67;
    }
+   */
 
 }
 
