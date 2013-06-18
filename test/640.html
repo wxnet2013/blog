@@ -23,17 +23,22 @@ html { overflow-x:hiddden; overflow-y:scroll; }
 @media screen and (orientation:landscape){
     /*g7 ok、华为 报错*/
     
-    /*
+
     .Home-main {
       width:100%;
     }
-    */
+  
 
+
+    /*方案 三 无效*/
+    /*
     html {
      zoom:0.65;
     }
+    */
     
     /*
+    方案 二
     @viewport {
      width: device-width;
      initial-scale: 1.5;
@@ -43,11 +48,16 @@ html { overflow-x:hiddden; overflow-y:scroll; }
 
 
 @media screen and (orientation:portrait){
-    
+  
+   /*方案三 */
+   /*
    html {
     zoom:1.5;
    }
+   */
+   
    /*
+   方案 二
    @viewport {
     width: device-width;
     initial-scale: 0.67;
