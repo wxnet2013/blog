@@ -22,8 +22,7 @@ html { overflow-x:hiddden; overflow-y:scroll; }
 
 @media screen and (orientation:landscape){
     /*g7 ok、华为 报错*/
-    
-
+    /*
     .Home-main,.Map,.Foot,.Focus {
       width:100%;
     }
@@ -31,6 +30,7 @@ html { overflow-x:hiddden; overflow-y:scroll; }
     .Focus img{
       width:640px; height:100%;
     }
+    */
 
 
     /*方案 三 无效*/
@@ -47,6 +47,11 @@ html { overflow-x:hiddden; overflow-y:scroll; }
      initial-scale: 1.5;
     }
     */
+
+    @viewport {
+     width: device-width;
+     zoom: 1.5;
+    }
 }
 
 
@@ -66,6 +71,12 @@ html { overflow-x:hiddden; overflow-y:scroll; }
     initial-scale: 0.67;
    }
    */
+
+  
+  @viewport {
+    width: device-width;
+    zoom: 0.67;
+  }
 
 }
 
