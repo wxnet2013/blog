@@ -5,7 +5,6 @@
  *  @import core/zepto.extend.js
  */
  //doc http://gmu.baidu.com/doc#imglazyload
-__req('modules/zepto.extend.js');
 (function ($) {
     /**
      * @name imglazyload
