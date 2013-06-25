@@ -6,27 +6,31 @@
 
 <style>
 
-#player {
-	width:320px;
-	height:181px;
-}
-
 body {
 	margin:0;
 	padding: 0;
 }
 
 
+#player {
+	width:320px;
+	height:181px;
+}
+
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
 	/* iPhone 4*/
 	#player {
 		width:480px;
-		height:362px;
+		height:271px;
 	}
 }
 
 @media screen and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {  
-/* iPhone 5 or iPod Touch 5th generation */  
+	/* iPhone 5 or iPod Touch 5th generation */  
+	#player {
+		width:568px;
+		height:321px;
+	}			
 }  
 </style>
 </head>
