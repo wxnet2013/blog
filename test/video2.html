@@ -10,8 +10,15 @@ var ua = navigator.userAgent,
     ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
     iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
 
-    alert(android);
-    alert(iphone);
+    //alert(android);
+    //alert(iphone);
+    if(!!iphone) {
+    	document.documentElement.classList.add('iphone');
+    }
+
+    if(!!android) {
+    	document.documentElement.classList.add('android');
+    }
 </script>
 <style>
 
@@ -21,14 +28,19 @@ body {
 }
 
 
-#player {
+.player {
 	width:320px;
 	height:181px;
 }
 
+.android .player {
+	width:100%;
+	height: auto;
+}
+
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
 	/* iPhone 4*/
-	#player {
+	.iphone .player {
 		width:480px;
 		height:271px;
 	}
@@ -36,7 +48,7 @@ body {
 
 @media screen and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {  
 	/* iPhone 5 or iPod Touch 5th generation */  
-	#player {
+	.iphone .player {
 		width:568px;
 		height:321px;
 	}			
@@ -46,6 +58,6 @@ body {
 <body>
 <!--video id="player"  controls="" autoplay="" src="http://123.125.118.69/videos/tv/20130610/89a384d299b32117516cce4a950caa76.mp4?key=6f3f103db4478e14&uuid=2ddc3862f63648e3ab3459c09e020766" poster="http://i0.letvimg.com/img/201305/14/iphone3/p_video.jpg" type="video/mp4"></video-->
 
-<video id="player" controls="" autoplay="" src="http://123.125.89.53/36/40/33/letv-uts/4324426-AVC-249937-AAC-31994-2850267-101241096-b241960d199de9df64d8f15021bfe29c-1370780391542.mp4" poster="http://i0.letvimg.com/img/201305/14/iphone3/p_video.jpg" type="video/mp4"></video>
+<video id="player" class="player" controls="" autoplay="" src="http://123.125.89.53/36/40/33/letv-uts/4324426-AVC-249937-AAC-31994-2850267-101241096-b241960d199de9df64d8f15021bfe29c-1370780391542.mp4" poster="http://i0.letvimg.com/img/201305/14/iphone3/p_video.jpg" type="video/mp4"></video>
 </body>
 </html>
