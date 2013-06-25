@@ -5,14 +5,13 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 
 <script>
-var ua = navigator.userAgent,
+	var ua = navigator.userAgent,
     android = ua.match(/(Android)\s+([\d.]+)/),
     ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
     iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
     if(!!iphone) {
     	document.documentElement.classList.add('iphone');
     }
-
 
     if(!!android) {
     	if (document.documentElement.classList) {
@@ -21,9 +20,8 @@ var ua = navigator.userAgent,
     		document.documentElement.className += ' android';
     	}
     }
-
-
 </script>
+
 <style>
 
 body {
@@ -42,7 +40,7 @@ body {
 }
 
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
-	/* iPhone 4*/
+	/* iPhone 4 or iPod Touch 4th generation*/
 	.iphone .player {
 		width:480px;
 		height:271px;
