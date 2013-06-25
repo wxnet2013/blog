@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 
+<script>
+var ua = navigator.userAgent,
+    android = ua.match(/(Android)\s+([\d.]+)/),
+    iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+
+    alert(android);
+    alert(iphone);
+</script>
 <style>
 
 body {
