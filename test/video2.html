@@ -13,10 +13,13 @@ var ua = navigator.userAgent,
     	document.documentElement.classList.add('iphone');
     }
 
-    alert(android);
-    alert(document.documentElement.classList);
+
     if(!!android) {
-    	document.documentElement.classList.add('android');
+    	if (document.documentElement.classList) {
+    		document.documentElement.classList.add('android');
+    	} else {
+    		document.documentElement.className += ' android';
+    	}
     }
 
 
