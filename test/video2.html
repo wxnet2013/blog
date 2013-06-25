@@ -9,9 +9,6 @@ var ua = navigator.userAgent,
     android = ua.match(/(Android)\s+([\d.]+)/),
     ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
     iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
-
-    //alert(android);
-    //alert(iphone);
     if(!!iphone) {
     	document.documentElement.classList.add('iphone');
     }
@@ -19,6 +16,8 @@ var ua = navigator.userAgent,
     if(!!android) {
     	document.documentElement.classList.add('android');
     }
+
+    alert(android);
 </script>
 <style>
 
@@ -34,7 +33,7 @@ body {
 }
 
 .android .player {
-	width:100%;
+	width: 100%;
 	height: auto;
 }
 
