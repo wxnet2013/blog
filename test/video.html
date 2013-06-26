@@ -7,6 +7,11 @@
 <script type="text/javascript" src="http://js.letvcdn.com/js/201306/26/lejs_1110/abc.js"></script>
 <script type="text/javascript">__loadjs('h5player');</script>
 
+
+<script src="../javascripts/zepto.js"></script>
+<script src="../javascripts/zepto.extend.js"></script>
+
+
 <script>
 	var ua = navigator.userAgent,
     android = ua.match(/(Android)\s+([\d.]+)/),
@@ -67,15 +72,9 @@ body {
 <body>
 		<div id="divcontainer"></div>
 		<script type="text/javascript">
-			window.onload = function(){
-				
-
 				//alert(window.innerHeight);
-
 				var width = window.innerWidth;
 					height = 181 / 320 * width;
-
-				
 
 				var player = LETV.using("Plugin").Player({
 					'cont':'#divcontainer',
@@ -96,7 +95,12 @@ body {
 					},
 					'videoInfo':{'mmsid':2671560} //vid和mmsid二者必选其一
 				});
-			}
+
+
+		$(window).on('ortchange', function () {    
+        	alert(1);
+     	});
+		
 		</script>
 </body>
 </html>
