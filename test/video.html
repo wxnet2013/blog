@@ -71,8 +71,11 @@ body {
 </head>
 <body>
 		<div id="divcontainer"></div>
+		
 		<script type="text/javascript">
-				//alert(window.innerHeight);
+
+				var ele = document.getElementById('#divcontainer_container');
+
 				var width = window.innerWidth;
 					height = 181 / 320 * width;
 
@@ -97,8 +100,10 @@ body {
 				});
 
 
-		$(window).on('ortchange', function () {    
-        	alert(1);
+		$(window).on('ortchange', function () {   
+			var width = window.innerWidth;
+					height = 181 / 320 * width; 
+        	$('.html5-video-container').width(width).height(height);
      	});
 		
 		</script>
