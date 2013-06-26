@@ -21,14 +21,20 @@ body,html {
 
 <script>
 
+var mql = window.matchMedia('screen and (width: ' + window.innerWidth + 'px)');
 
-if (window.matchMedia('screen and (width: ' + window.innerWidth + 'px)').matches) {
-  /* the view port is at least 400 pixels wide */
-  alert(1111);
 
-} else {
-  /* the view port is less than 400 pixels wide */
-}
+mql.addListener(function(mql) {
+
+ if (mql.matches) {
+
+ alert("Matches now!");
+
+ } 
+
+});
+
+
 
 
 </script>
