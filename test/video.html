@@ -101,9 +101,6 @@ for iphone
 
 
 
-		/*
-			对于不支持orientationchange的机型和系统，我们就只能借助于resize来触发，大家知道resize在很多情况下都会触发，而不光只有转屏，因此并不是很准。
-		*/
 		!!android && $(window).on('ortchange', function () {   
 			var width = window.innerWidth;
 					height = 181 / 320 * width; 
