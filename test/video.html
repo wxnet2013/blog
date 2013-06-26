@@ -37,14 +37,12 @@ body {
 	height:181px !important;
 }
 
-.html5-video-container .myvideo {
-	margin: 0;
-}
-
+/*
 .android .html5-video-container {
 	width: 100% !important;
 	height: auto !important;
 }
+*/
 
 @media screen and (max-device-width: 480px) and (orientation:landscape) {
 	/* iPhone 4 or iPod Touch 4th generation*/
@@ -69,10 +67,14 @@ body {
 		<div id="divcontainer"></div>
 		<script type="text/javascript">
 			window.onload = function(){
+				
+				var width = window.innerWidth;
+					height = 181 / 320 * width;
+
 				var player = LETV.using("Plugin").Player({
 					'cont':'#divcontainer',
-					'width':320,
-					'height':181, 
+					'width': width,
+					'height': height, 
 					'showDefinaBtns':true, 
 					'event':{
 						'onstart':function(){
