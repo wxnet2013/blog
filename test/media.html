@@ -1,0 +1,34 @@
+---
+layout: webapp
+title: 320
+---
+
+<style>
+body,html {
+	margin: 0;
+	padding: 0;
+}
+.pannel {
+	width: 320px;
+	height:480px;
+	background-color: green;
+	margin: 0 auto;
+}
+</style>
+<div class="pannel">
+	480*320
+</div>
+
+<script>
+
+
+if (window.matchMedia("screen and (device-width: 320px)").matches) {
+  /* the view port is at least 400 pixels wide */
+  alert(1111);
+
+} else {
+  /* the view port is less than 400 pixels wide */
+}
+
+
+</script>
