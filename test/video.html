@@ -4,22 +4,88 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 
-<style>
+<script type="text/javascript" src="http://js.letvcdn.com/js/201306/26/abc/abc.js"></script>
+<script type="text/javascript">__loadjs('h5player');</script>
 
-#player {
-	width:100%;
-	height:auto;
-}
+<script>
+	var ua = navigator.userAgent,
+    android = ua.match(/(Android)\s+([\d.]+)/),
+    ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+    iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+    if(!!iphone) {
+    	document.documentElement.classList.add('iphone');
+    }
+
+    if(!!android) {
+    	if (document.documentElement.classList) {
+    		document.documentElement.classList.add('android');
+    	} else {
+    		document.documentElement.className += ' android';
+    	}
+    }
+</script>
+
+<style>
 
 body {
 	margin:0;
 	padding: 0;
 }
+
+.html5-video-container {
+	width:320px;
+	height:181px;
+}
+
+.android .html5-video-container {
+	width: 100%;
+	min-height:181px;
+	height: auto;
+}
+
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+	/* iPhone 4 or iPod Touch 4th generation*/
+	.iphone .html5-video-container {
+		width:480px;
+		height:271px;
+	}
+}
+
+@media screen and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {  
+	/* iPhone 5 or iPod Touch 5th generation */  
+	.iphone .html5-video-container {
+		width:568px;
+		height:321px;
+	}			
+}  
 </style>
+
+
 </head>
 <body>
-<!--video id="player"  controls="" autoplay="" src="http://123.125.118.69/videos/tv/20130610/89a384d299b32117516cce4a950caa76.mp4?key=6f3f103db4478e14&uuid=2ddc3862f63648e3ab3459c09e020766" poster="http://i0.letvimg.com/img/201305/14/iphone3/p_video.jpg" type="video/mp4"></video-->
-
-<video  width="320" height="181" controls="" autoplay="" src="http://123.125.89.53/36/40/33/letv-uts/4324426-AVC-249937-AAC-31994-2850267-101241096-b241960d199de9df64d8f15021bfe29c-1370780391542.mp4" poster="http://i0.letvimg.com/img/201305/14/iphone3/p_video.jpg" type="video/mp4"></video>
+		<div id="divcontainer"></div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var player = LETV.using("Plugin").Player({
+					'cont':'#divcontainer',
+					'width':970,
+					'height':500, 
+					'showDefinaBtns':true, 
+					'event':{
+						'onstart':function(){
+							console.log('onstart');
+						},
+						'onplay':function(){
+							
+						},
+						'onpause':function(){
+						},
+						'onend':function(){
+						}
+					},
+					'videoInfo':{'vid':1155436, 'mmsid':1155436} //vid和mmsid二者必选其一
+				});
+			}
+		</script>
 </body>
 </html>
