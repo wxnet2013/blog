@@ -89,6 +89,8 @@
 				myScroll = new IScroll('#wrapper', { useTransition: false,scrollX: true,mouseWheel: true });
 			}
 
+			loaded();
+
 			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 		</script>
