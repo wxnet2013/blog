@@ -1,0 +1,38 @@
+---
+layout: webapp
+title: 中文测试测试
+---
+
+<script src="http://twitter.github.io/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+
+<script>
+// construct template string
+var template = "<p>Hello {{world}}!</p>";
+// compile template
+var hello = Hogan.compile(template);
+var str = hello.render({'world':'basic'});
+document.write(str);
+
+
+var list_tpl = ["<p><ul>{{#list}}",
+"<li>{{key}}</li>",
+"{{/list}}</ul></p>"].join('');
+
+var list_data = {'list':[{'key':'a'},{'key':'b'},{'key':'c'}]};
+
+hello = Hogan.compile(list_tpl);
+document.write(hello.render(list_data));
+
+list_tpl = ["<p>{{#empty}}",
+"<span>内容为空</span>",
+"{{/empty}}</p>"].join('');
+
+
+
+hello = Hogan.compile(list_tpl);
+document.write(hello.render({'empty': true}));
+
+
+
+</script>
+
