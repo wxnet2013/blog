@@ -13,8 +13,7 @@
 var myScroll;
 
 function loaded () {
-	//eventPassthrough: true,
-	myScroll = new IScroll('#wrapper', { preventDefault: true,  scrollX: true, scrollY: false });
+	myScroll = new IScroll('#wrapper', { preventDefault: true, eventPassthrough: true, scrollX: true, scrollY: false });
 }
 
 </script>
