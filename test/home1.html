@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html class="iphone">
+<html class="android">
 <head>
   <meta charset="utf-8">
   <link rel="dns-prefetch" href="//js.letvcdn.com">
@@ -44,6 +44,9 @@
   </style>
 </head>
 <body>
+<script>
+(document.documentElement.className.indexOf('android')!==-1) && (function(d){var width = window.innerWidth,style = d.createElement('style');style.innerHTML = '#j-scroller li{width:'+width+'px;}';d.getElementsByTagName('head')[0].lastChild.appendChild(style);})(doucment);
+</script>
 <div class="m-home">
   <!-- 顶部导航 -->
   <div class="head">
