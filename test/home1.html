@@ -18,6 +18,23 @@
   <meta content="telephone=no" name="format-detection">
   <link rel="stylesheet" href="http://css.letvcdn.com/css/201307/25/webapp_180302/global.css">
   <link rel="stylesheet" href="http://css.letvcdn.com/css/201307/25/webapp_180302/home.css">
+
+  <style type="text/css">
+/*for iphone*/
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+  /* iPhone 4 or iPod Touch 4th generation*/
+  .iphone #j-scroller li {
+    width:480px;
+  }
+}
+
+@media screen and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {  
+  /* iPhone 5 or iPod Touch 5th generation */    
+  .iphone #j-scroller li {
+    width:568px;
+  }
+}
+  </style>
 </head>
 <body>
 <div class="m-home">
