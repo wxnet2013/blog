@@ -1,0 +1,14 @@
+---
+layout: webapp
+title: na
+---
+
+<script>
+  
+  var list = [];
+  for (x in navigator){
+  	list.push(x + " : " + navigator[x]);
+  }
+
+  document.write(list.join('<br>'));
+</script>
