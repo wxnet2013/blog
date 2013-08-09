@@ -570,7 +570,9 @@ le.m.loadMore= {
 		this.__scroll = _.bind(this._scroll,this);
 		this._win.on('scroll',this.__scroll);
         alert('initevent');
-        this._win.on('pageshow',_.bind(this._pageshow,this));
+        this._win.on('pageshow',function(){
+            alert('pageshow1');
+        });
         this._win.on('pagehide', function(){
             alert('hide');
         });
@@ -580,7 +582,7 @@ le.m.loadMore= {
 	},
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
-        alert('pageshow');
+        alert('pageshow2');
         if(e.persisted) {
             alert(this.__scroll);
             this._win.on('scroll',this.__scroll);   
