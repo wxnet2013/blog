@@ -570,6 +570,9 @@ le.m.loadMore= {
 		this.__scroll = _.bind(this._scroll,this);
 		this._win.on('scroll',this.__scroll);
         this._win.on('pageshow',_.bind(this._pageshow,this));
+        this._win.on('pagehide', function(){
+            alert('hide');
+        });
 	},
     _pageshow: function(e){
         alert(e.persisted);
