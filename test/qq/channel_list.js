@@ -607,6 +607,7 @@ le.m.loadMore= {
 			return;
 		}*/
 
+        alert((scrollTop + winHeight) > (top + height) );
 		if( (scrollTop + winHeight) > (top + height) ) {
             alert(111111);
 			data = this._list.splice(0,this._moreSize);
