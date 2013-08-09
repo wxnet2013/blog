@@ -587,6 +587,8 @@ le.m.loadMore= {
 			scrollTop = this._win.scrollTop(),
 			winHeight = this._win.height(),
 			data = null;
+
+        alert([top,height,scrollTop,winHeight,this._doc.height()]);
 		
 		if(!_.size(this._list)) {
 			this._win.off('scroll',this.__scroll);
@@ -601,7 +603,7 @@ le.m.loadMore= {
 			this._moredata.before(data.join(''));
 			$('img[data-url]').imglazyload();
 		}
-		//console.log([top,height,scrollTop,winHeight,this._doc.height()]);
+		alert([top,height,scrollTop,winHeight,this._doc.height()]);
 	},
 	_list: [],
 	_parseData: function(){
