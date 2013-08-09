@@ -578,9 +578,13 @@ le.m.loadMore= {
             alert('scroll');
         });
 
+        window.addEventListener('scroll',function(){
+            alert(33333333333333);
+        },false);
+        /*
         window.onscroll = function(){
             alert('2222222222222222');
-        };
+        };*/
 	},
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
