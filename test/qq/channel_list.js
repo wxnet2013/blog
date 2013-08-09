@@ -588,15 +588,15 @@ le.m.loadMore= {
 			winHeight = this._win.height(),
 			data = null;
 
-        alert([top,height,scrollTop,winHeight,this._doc.height()]);
-		
+        //alert([top,height,scrollTop,winHeight,this._doc.height()]);
+		/*
 		if(!_.size(this._list)) {
-			this._win.off('scroll',this.__scroll);
+			//this._win.off('scroll',this.__scroll);
 			if(!!this._moreBtn.size() && this._moreBtn.hasClass('f-hide') ){
 				this._moreBtn.removeClass('f-hide');
 			}
 			return;
-		}
+		}*/
 
 		if( (scrollTop + winHeight) > (top + height) ) {
 			data = this._list.splice(0,this._moreSize);
