@@ -589,7 +589,7 @@ le.m.loadMore= {
     },
 	_moreSize: 6,
 	_scroll: function(){
-        //alert('list: ' + _.size(this._list));
+        alert('list: ' + _.size(this._list));
 		var top = this._listWrapper.position()['top'],
 			height = this._listWrapper.height(),
 			scrollTop = this._win.scrollTop(),
