@@ -574,6 +574,9 @@ le.m.loadMore= {
         this._win.on('pagehide', function(){
             alert('hide');
         });
+        this._win.on('scroll',function(){
+            alert('scroll');
+        });
 	},
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
