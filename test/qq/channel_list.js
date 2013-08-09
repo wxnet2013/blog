@@ -580,7 +580,9 @@ le.m.loadMore= {
 	},
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
-        alert(e.persisted);
+        if(e.persisted) {
+            this._win.on('scroll',this.__scroll);   
+        }
     },
 	_moreSize: 6,
 	_scroll: function(){
