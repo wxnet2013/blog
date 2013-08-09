@@ -577,6 +577,10 @@ le.m.loadMore= {
         this._win.on('scroll',function(){
             alert('scroll');
         });
+
+        window.onscroll = function(){
+            alert('2222222222222222');
+        };
 	},
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
