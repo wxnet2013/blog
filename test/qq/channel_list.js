@@ -597,7 +597,7 @@ le.m.loadMore= {
 			winHeight = this._win.height(),
 			data = null;
 
-        //alert([top,height,scrollTop,winHeight,this._doc.height()]);
+        alert([top,height,scrollTop,winHeight]);
 		/*
 		if(!_.size(this._list)) {
 			//this._win.off('scroll',this.__scroll);
