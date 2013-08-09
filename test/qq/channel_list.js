@@ -569,7 +569,7 @@ le.m.loadMore= {
 	_initEvent: function(){
 		this.__scroll = _.bind(this._scroll,this);
 		this._win.on('scroll',this.__scroll);
-        alert('initevent');
+        //alert('initevent');
         this._win.on('pageshow',function(){
             alert('pageshow1');
         });
@@ -584,13 +584,13 @@ le.m.loadMore= {
         //bfcache 浏览器返回 缓存
         alert('pageshow2');
         if(e.persisted) {
-            alert(this.__scroll);
-            this._win.on('scroll',this.__scroll);   
+            //alert(this.__scroll);
+            //this._win.on('scroll',this.__scroll);   
         }
     },
 	_moreSize: 6,
 	_scroll: function(){
-        alert('list: ' + _.size(this._list));
+        //alert('list: ' + _.size(this._list));
 		var top = this._listWrapper.position()['top'],
 			height = this._listWrapper.height(),
 			scrollTop = this._win.scrollTop(),
@@ -612,7 +612,7 @@ le.m.loadMore= {
 			this._moredata.before(data.join(''));
 			$('img[data-url]').imglazyload();
 		}
-		alert([top,height,scrollTop,winHeight,this._doc.height()]);
+		//alert([top,height,scrollTop,winHeight,this._doc.height()]);
 	},
 	_list: [],
 	_parseData: function(){
