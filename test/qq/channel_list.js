@@ -576,10 +576,12 @@ le.m.loadMore= {
         });
 	},
     _pageshow: function(e){
+        //bfcache 浏览器返回 缓存
         alert(e.persisted);
     },
 	_moreSize: 6,
 	_scroll: function(){
+        alert('list: ' + _.size(this._list));
 		var top = this._listWrapper.position()['top'],
 			height = this._listWrapper.height(),
 			scrollTop = this._win.scrollTop(),
