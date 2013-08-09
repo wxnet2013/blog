@@ -608,6 +608,7 @@ le.m.loadMore= {
 		}*/
 
 		if( (scrollTop + winHeight) > (top + height) ) {
+            alert(111111);
 			data = this._list.splice(0,this._moreSize);
 			this._moredata.before(data.join(''));
 			$('img[data-url]').imglazyload();
