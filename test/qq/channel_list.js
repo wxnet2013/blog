@@ -581,6 +581,7 @@ le.m.loadMore= {
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
         if(e.persisted) {
+            alert(this.__scroll);
             this._win.on('scroll',this.__scroll);   
         }
     },
