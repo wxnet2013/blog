@@ -569,7 +569,11 @@ le.m.loadMore= {
 	_initEvent: function(){
 		this.__scroll = _.bind(this._scroll,this);
 		this._win.on('scroll',this.__scroll);
+        this._win.on('pageshow',_.bind(this._pageshow,this));
 	},
+    _pageshow: function(e){
+        alert(e.persisted);
+    },
 	_moreSize: 6,
 	_scroll: function(){
 		var top = this._listWrapper.position()['top'],
