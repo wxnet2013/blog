@@ -568,8 +568,12 @@ le.m.loadMore= {
 	},
 	_initEvent: function(){
 		this.__scroll = _.bind(this._scroll,this);
-		this._win.on('scroll',this.__scroll);
+		//bfcache bug
+        //this._win.on('scroll',this.__scroll);
+        window.addEventListener('scroll',this.__scroll,false);
+
         //alert('initevent');
+        /*
         this._win.on('pageshow',_.bind(this._pageshow,this));
         this._win.on('pagehide', function(){
             alert('hide');
@@ -579,13 +583,15 @@ le.m.loadMore= {
         });
 
         window.addEventListener('scroll',function(){
-            alert(33333333333333);
-        },false);
+            //alert(33333333333333);
+        },false);*/
+
         /*
         window.onscroll = function(){
             alert('2222222222222222');
         };*/
 	},
+    /*
     _pageshow: function(e){
         //bfcache 浏览器返回 缓存
         alert('pageshow2');
@@ -594,28 +600,28 @@ le.m.loadMore= {
             alert(this.__scroll);
             this._win.on('scroll',this.__scroll);   
         }
-    },
+    },*/
 	_moreSize: 6,
 	_scroll: function(){
-        alert(this._list);
-        alert('list: ' + _.size(this._list));
+        //alert(this._list);
+        //alert('list: ' + _.size(this._list));
 		var top = this._listWrapper.position()['top'],
 			height = this._listWrapper.height(),
 			scrollTop = this._win.scrollTop(),
 			winHeight = this._win.height(),
 			data = null;
 
-        alert([top,height,scrollTop,winHeight]);
-		/*
+        //alert([top,height,scrollTop,winHeight]);
+		
 		if(!_.size(this._list)) {
 			//this._win.off('scroll',this.__scroll);
 			if(!!this._moreBtn.size() && this._moreBtn.hasClass('f-hide') ){
 				this._moreBtn.removeClass('f-hide');
 			}
 			return;
-		}*/
+		}
 
-        alert((scrollTop + winHeight) > (top + height) );
+        //alert((scrollTop + winHeight) > (top + height) );
 		if( (scrollTop + winHeight) > (top + height) ) {
             alert(111111);
 			data = this._list.splice(0,this._moreSize);
