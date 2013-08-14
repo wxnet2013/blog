@@ -1,20 +1,29 @@
 #项目目录及文件名
 ##项目目录
-1、components 业务无关的组件，第三方开源或自己开发。目前已有的组件（添加到首屏幕、tab组件、gmu套件、mustache模版引擎、iscroll、播放器）
-2、lib 项目框架（zepto、zepto插件、underscore） 
-3、main  项目的入口文件
-4、modules 业务模块，其中一个文件是一个独立的模块。
-5、views  展现层，每个文件对应一个模块相关的展现层。
-6、tips 展现层用到的html代码。
+1. components 
+   业务无关的组件，第三方开源或自己开发。目前已有的组件（添加到首屏幕. tab组件. gmu套件. mustache模版引擎. iscroll. 播放器）
+2. lib 
+   项目框架（zepto. zepto插件. underscore） 
+3. main  
+   项目的入口文件
+4. modules 
+   业务模块，其中一个文件是一个独立的模块。
+5. views  
+   展现层，每个文件对应一个模块相关的展现层。
+6. tips 
+   展现层用到的html代码。
 
 ##文件命名
-1、所有文件名用小写。
-2、入口文件和模块文件用后缀标明项目（_iphone、_android）
+1. 所有文件名用小写。
+2. 入口文件和模块文件用后缀标明项目（_iphone. _android）
 
 ##SVN外部链接的文件及目录
-1、components／player  目录，播放器独立开发
-2、lib  H5项目共享，目前两个项目引用（webapp、webapp_passport）
-3、modules／pvstats.js
+1. components／player  
+   目录，播放器独立开发
+2. lib  
+   H5项目共享，目前两个项目引用（webapp. webapp_passport）
+3. modules／pvstats.js
+   M站调用主站的统计代码。
 
 ##目录注解
 ├── components    和业务无关的目录，用于放一些通用的组件。
@@ -40,7 +49,7 @@
 │   │   ├── zepto.cookie.js
 │   │   ├── zepto.data.js
 │   │   └── zepto.js
-│   ├── main   同主站，项目的入口文件。其中文件名以_android、_iphone结尾的文件针对不同的设备，无后缀的文件，是不区分设备的。
+│   ├── main   同主站，项目的入口文件。其中文件名以_android. _iphone结尾的文件针对不同的设备，无后缀的文件，是不区分设备的。
 │   │   ├── about.js
 │   │   ├── base.js
 │   │   ├── channel_list.js
