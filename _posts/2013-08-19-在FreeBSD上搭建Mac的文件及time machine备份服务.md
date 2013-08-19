@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 前端模块化
+title: 在FreeBSD上搭建Mac的文件及time machine备份服务
 ---
 
 #在FreeBSD上搭建Mac的文件及time machine备份服务
