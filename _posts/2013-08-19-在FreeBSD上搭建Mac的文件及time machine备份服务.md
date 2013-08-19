@@ -1,3 +1,7 @@
+---
+layout: default
+title: 前端模块化
+---
 #在FreeBSD上搭建Mac的文件及time machine备份服务
 上周将工作用电脑由公司配备的台式机切换到自己低配的macbook air上面，小本本的128G SSD远远不能满足工作的储存需要，但又不舍得入手昂贵的AirPort Time Capsule，于是考虑将空闲下来的pc主机作为Mac的文件及time machine的备份服务器。
 
