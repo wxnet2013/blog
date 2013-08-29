@@ -1005,9 +1005,10 @@ __loadjs('home');
 
 <script>
 var start = (new Date()).getTime();
-var list = _.toArray(document.querySelectorAll('a[data-from="index"]'));
+var list = _.toArray(document.querySelectorAll('a[data-from]'));
 _.map(list,function(v){
-	v.href = v.href + "?from=" + v.getAttribute('data-from');
+	var _href = v.href;
+	v.href = _href + (_href.indexOf('?') < 0 ? '?' : '&' )  + "from=" + v.getAttribute('data-from');
 });
 var end = (new Date()).getTime();
 
