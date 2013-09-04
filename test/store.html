@@ -1,0 +1,19 @@
+---
+layout: webapp
+title: 中文测试测试
+---
+<script>
+
+var _store = window.localStorage;
+_store.setItem('jStorage','aaaa');
+
+alert("1:" + _store.getItem('jStorage'));
+
+_store['jStorage'] = 'aaaa';//.setItem('jStorage','aaaa');
+
+alert("1:" + _store['jStorage']);
+</script>
+
+<div>
+dddd
+</div>
