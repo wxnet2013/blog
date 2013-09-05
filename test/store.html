@@ -5,14 +5,15 @@ title: 中文测试测试
 <script>
 
 var _store = window.localStorage;
-var obj = {a:1,b:2};
+
+var obj = {"history":[{a:1},{a:2}]};
 _store.setItem('jStorage',JSON.stringify(obj));
 
-alert("1:" + _store.getItem('jStorage'));
+alert( JSON.parse( _store.getItem('jStorage') ));
 
 _store['jStorage'] = JSON.stringify(obj);//.setItem('jStorage','aaaa');
 
-alert("1:" + _store['jStorage']);
+alert(JSON.parse( _store['jStorage'] ) );
 </script>
 
 <div>
