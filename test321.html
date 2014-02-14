@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
@@ -34,6 +33,117 @@
 <body class="single single-post postid-399958 single-format-standard">
 
 jhahahahah
+
+
+<script>
+(function(){
+ 
+        function onBridgeReady() {
+ 
+            var appId  = '',
+                imgUrl = "http://mmbiz.qpic.cn/mmbiz/g7lNKmlQG9nR5CGj1Rbaibk3zmmIYbfabictJxnEZl8mRSgzMjcWh0Mib8xCS1ZT6siczB61YpbibyXCWluzxPyb3EQ/0",
+                link   = "http://mp.weixin.qq.com/s?__biz=MjM5NzU0NjU0MA==&mid=200015982&idx=1&sn=e3c2c5cd4c0e481e4f786da39810f0a5#rd",
+                title  = htmlDecode("看了这些图，再也别轻松的让你的设计师朋友抽空帮你设计一个“简单的”logo了"),
+                desc   = htmlDecode("小伙伴们是不是老遇上这样的问题：&nbsp;&nbsp;&nbsp;&nbsp;“兄弟，哎哟我的兄弟，我现在开公司啦，需要个LOGO，我知道你已经是"),
+                fakeid = "";
+                desc   = desc || link;  
+ 
+            if( "1" == "0" ){
+                WeixinJSBridge.call("hideOptionMenu");  
+            }
+ 
+            // 发送给好友; 
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            
+                        WeixinJSBridge.invoke('sendAppMessage',{
+                                              "appid"      : appId,
+                                              "img_url"    : imgUrl,
+                                              "img_width"  : "640",
+                                              "img_height" : "640",
+                                              "link"       : share_scene(link, 1),
+                                              "desc"       : desc,
+                                              "title"      : title
+                        }, function(res) {report(link, fakeid, 1);
+                        });
+            });
+ 
+                    // 分享到朋友圈;
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                        report(link, fakeid, 2);
+                        WeixinJSBridge.invoke('shareTimeline',{
+                                              "img_url"    : imgUrl,
+                                              "img_width"  : "640",
+                                              "img_height" : "640",
+                                              "link"       : share_scene(link, 2),
+                                              "desc"       : desc,
+                                              "title"      : title
+                        }, function(res) {
+                        });
+            
+            });
+ 
+                    // 分享到微博;
+            var weiboContent = '';
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+            
+                        WeixinJSBridge.invoke('shareWeibo',{
+                                              "content" : title + share_scene(link, 3),
+                                              "url"     : share_scene(link, 3) 
+                                              }, function(res) {report(link, fakeid, 3);
+                                              });
+            });
+ 
+                    // 分享到Facebook
+            WeixinJSBridge.on('menu:share:facebook', function(argv){
+                report(link, fakeid, 4);
+                WeixinJSBridge.invoke('shareFB',{
+                      "img_url"    : imgUrl,
+                      "img_width"  : "640",
+                      "img_height" : "640",
+                      "link"       : share_scene(link, 4),
+                      "desc"       : desc,
+                      "title"      : title
+                }, function(res) {} );
+            });
+ 
+                    // 新的接口
+            WeixinJSBridge.on('menu:general:share', function(argv){
+                var scene = 0;
+                switch(argv.shareTo){
+                    case 'friend'  : scene = 1; break;
+                    case 'timeline': scene = 2; break;
+                    case 'weibo'   : scene = 3; break;
+                }
+                    argv.generalShare({
+                                        "appid"      : appId,
+                                        "img_url"    : imgUrl,
+                                        "img_width"  : "640",
+                                        "img_height" : "640",
+                                        "link"       : share_scene(link,scene),
+                                        "desc"       : desc,
+                                        "title"      : title
+                    }, function(res){report(link, fakeid, scene);
+                    });
+            });
+ 
+                    
+        }
+ 
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        }else{
+            onBridgeReady();
+        }
+        
+        })();
+
+  </script>
+</script>
 
 
 </body>
