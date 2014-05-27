@@ -14,6 +14,8 @@ netatalk是一个开源的afp文件服务器，可为Mac Os提供文件共享服
 安装过程采用FreeBSD的ports编译方式。
 
 ##安装netatalk
+pkg install netatalk
+
 cd /usr/ports/net/netatalk/ && make WITHOUT_X11=yes config install clean
 文件服务器不需要工作在桌面环境下，所以要特别注意编译的时候排除掉X11.
 
@@ -42,6 +44,9 @@ afp://[服务器ip]
 ##安装avahi
 为了让Mac Os在还原模式下（开机时按command＋R快捷键）能够搜索到netatalk，文件服务器还需要安装avahi服务，Avahi和苹果的Bonjour同为Zeroconf规范的开源实现。
 
+FB10
+pkg install avahi
+旧版本的FB
 以 ports 方式安装 avahi，配置里只需要选择 avahi-libdns
 cd /usr/ports/net/avahi/ && make WITHOUT_X11=yes config install clean
 

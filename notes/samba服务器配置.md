@@ -37,4 +37,5 @@ create mode = 0770
 directory mode = 0770
 vaild users = @ria
 write list = @ria
+
   
