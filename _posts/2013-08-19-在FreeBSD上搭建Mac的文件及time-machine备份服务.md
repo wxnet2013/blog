@@ -3,7 +3,7 @@ layout: default
 title: 在FreeBSD上搭建Mac的文件及time machine备份服务
 ---
 
-#在FreeBSD上搭建Mac的文件及time machine备份服务
+# {{ page.title }}
 上周将工作用电脑由公司配备的台式机切换到自己低配的macbook air上面，小本本的128G SSD远远不能满足工作的储存需要，但又不舍得入手昂贵的AirPort Time Capsule，于是考虑将空闲下来的pc主机作为Mac的文件及time machine的备份服务器。
 
 服务器的操作系统当然要用我最爱的FreeBSD，她无论在稳定性、性能和易用性方面都要完胜已经是四分五裂的linux。需要在服务器上面安装netatalk及avahi。
