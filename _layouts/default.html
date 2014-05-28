@@ -34,9 +34,15 @@
 　　　　<div class="content">
 			{{ content }}
 	   </div>
-	   <script src="cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+	   
+	   <script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
 	   <script>
-	   prettyPrint();
+	     var pres = document.getElementsByTagName("code");
+	     for (var i=0; i < pres.length; ++i) {
+	       pres[i].className = "prettyprint ";
+	     }
+	     prettyPrint();
 	   </script>
+	   
 　　</body>
 </html>
