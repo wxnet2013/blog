@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: X. Notes
 subtitle:
 description:
-author: John Doe
-language:
-timezone:
+author: X. W.
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://wxnet.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
