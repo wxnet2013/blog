@@ -10,13 +10,9 @@
   
 
   
-  <meta name="description" content="初使状态模块的雏形我们很明显能感知到，这段逻辑是具备通用性的，可以写成插件。
-但一开始的时候，功能还没完善，直接独立插件，维护起来比较麻烦。
-此时，我们可以把代码写成插件的形式，但并不独立出去。
-Node模块1npm
-Vue模块1Vue
-插件机制1Vue
-最后所有模块、插件，都应该有完善的单元测试，">
+  <meta name="description" content="渐进式开发是将具体业务代码逐渐抽象为公共组件的过程，比如要开发一个显示页面浏览量（PV）的图表功能，最终可以抽象为一个折线图组件。
+这个组件，可以用在所有需要折线图的功能上。组件化可以做到跨项目或团队的代码复用，可以很大程度上提高开发效率。
+最简单的抽象过程，是将项目中的工具类函数抽离为组件，添加对">
   
 
   
@@ -89,13 +85,17 @@ Vue模块1Vue
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="初使状态"><a href="#初使状态" class="headerlink" title="初使状态"></a>初使状态</h2><h2 id="模块的雏形"><a href="#模块的雏形" class="headerlink" title="模块的雏形"></a>模块的雏形</h2><p>我们很明显能感知到，这段逻辑是具备通用性的，可以写成插件。</p>
-<p>但一开始的时候，功能还没完善，直接独立插件，维护起来比较麻烦。</p>
-<p>此时，我们可以把代码写成插件的形式，但并不独立出去。</p>
-<h2 id="Node模块"><a href="#Node模块" class="headerlink" title="Node模块"></a>Node模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm</div></pre></td></tr></table></figure>
-<h2 id="Vue模块"><a href="#Vue模块" class="headerlink" title="Vue模块"></a>Vue模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue</div></pre></td></tr></table></figure>
-<h2 id="插件机制"><a href="#插件机制" class="headerlink" title="插件机制"></a>插件机制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue</div></pre></td></tr></table></figure>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>所有模块、插件，都应该有完善的单元测试，尽量做到代码覆盖率100%。</p>
+        <p>渐进式开发是将具体业务代码逐渐抽象为公共组件的过程，比如要开发一个显示页面浏览量（PV）的图表功能，最终可以抽象为一个折线图组件。</p>
+<p>这个组件，可以用在所有需要折线图的功能上。组件化可以做到跨项目或团队的代码复用，可以很大程度上提高开发效率。</p>
+<p>最简单的抽象过程，是将项目中的工具类函数抽离为组件，添加对应的单元测试。将代码托管到github，并发布到npm或私有npm里。</p>
+<p>原则上，在开发过程中应该尽量做到：</p>
+<ol>
+<li>同一段代码不应该多次出现，复制粘贴代码会导致维护性灾难；</li>
+<li>开发一个功能前，可以先调研下npm仓库里是否有满足要求的组件，比如加密解密、日期格式化等等。</li>
+<li>在项目中，功能文件应该符合单一职责原则，过多的职责会导致代码的维护性变差。</li>
+</ol>
+<p>前端渐进式开发，可以很大程度上提高生产效率，但前提是需要一定的知识全面性，比如要了解：<a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">语义化版本</a>，<a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">package.json规则</a>、<a href="https://mochajs.org/" target="_blank" rel="external">单元测试</a>、npm组件发布等等。</p>
+<p>但是，放任开源会带来一些业务代码泄漏的风险。整个过程需要大家在遵循一定的规则下进行，要适度开放。</p>
 
       
     </div>
