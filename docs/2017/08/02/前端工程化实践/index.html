@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>X. Notes</title>
+  <title>前端工程化实践 | X. Notes</title>
 
   
   <meta name="author" content="X. W.">
   
 
   
+  <meta name="description" content="各产品线多种架构并存，维护成本过高“正常模式”下的ES5，并不适合企业级前端开发代码风格的不同，增加了交叉维护成本源代码管理不规范，会导致意外的产品风险前端业务过重，前后端分离不彻底，无法跨平台访问前端的未来">
+  
 
+  
+  
+  <meta name="keywords" content="全栈,Node">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="前端工程化实践"/>
 
   <meta property="og:site_name" content="X. Notes"/>
 
@@ -54,12 +59,11 @@
 </header>
 
     <main class="site-main posts-loop">
-    
-  <article>
+    <article>
 
   
     
-    <h3 class="article-title"><a href="/2017/08/02/前端工程化实践/"><span>前端工程化实践</span></a></h3>
+    <h3 class="article-title"><span>前端工程化实践</span></h3>
     
   
 
@@ -106,76 +110,6 @@
 </article>
 
 
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/06/16/渐进式全栈开发策略/"><span>渐进式全栈开发策略</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/06/16/渐进式全栈开发策略/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-06-16T03:18:25.000Z">
-          2017-06-16
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>渐进式开发是将具体业务代码逐渐抽象为公共组件的过程，比如要开发一个显示页面浏览量（PV）的图表功能，最终可以抽象为一个折线图组件。</p>
-<p>这个组件，可以用在所有需要折线图的功能上。组件化可以做到跨项目或团队的代码复用，可以很大程度上提高开发效率。</p>
-<p>最简单的抽象过程，是将项目中的工具类函数抽离为组件，添加对应的单元测试。将代码托管到github，并发布到npm或私有npm里。</p>
-<p>可以想象，在开发过程中会不断的重构代码的设计，保证一定的稳定性是前提条件。所以需要完善的单元测试。</p>
-<p>原则上，在开发过程中应该尽量做到：</p>
-<ol>
-<li>同一段代码不应该多次出现，复制粘贴代码会导致维护性灾难；</li>
-<li>开发一个功能前，可以先调研下npm仓库里是否有满足要求的组件，比如加密解密、日期格式化等等。</li>
-<li>在项目中，功能文件应该符合单一职责原则，过多的职责会导致代码的维护性变差。</li>
-</ol>
-<p>前端渐进式开发，可以很大程度上提高生产效率，但前提是需要一定的知识全面性，比如要了解：<a href="http://semver.org/lang/zh-CN/" target="_blank" rel="external">语义化版本</a>，<a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">package.json规则</a>、<a href="https://mochajs.org/" target="_blank" rel="external">单元测试</a>、npm组件发布等等。</p>
-<p>但是，放任开源会带来一些业务代码泄漏的风险。整个过程需要大家在遵循一定的规则下进行，要适度开放。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/全栈/">全栈</a><a href="/tags/Node/">Node</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
     </main>
 
     <footer class="site-footer">
