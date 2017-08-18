@@ -10,13 +10,12 @@
   
 
   
-  <meta name="description" content="DTU前端工程化实践年初入职TalkingData，到现在半年有余。感谢TD的充分信任和赋权，使我可以大胆尝试。整个部门几条产品线，如果技术栈、规范不统一，后期产品的迭代会很难进行下去。在组件化、git规范、代码规范和自动化方面引入了很多现成的方案。
-组件化如今的前端开发，已不是简单的页面制作加上j">
+  <meta name="description" content="前端工程化实践年初入职TalkingData，到现在半年有余，是时候回头看看这半年走过的路。感谢TD的充分信任和赋能，使我可以大胆尝试。部门的几条产品线，如果技术栈、规范不统一，很难保证产品的快速迭代。前端工程化属于软件工程范畴，半年中尝试了组件化开发理念、规范了 Git 工作流、Git Comm">
   
 
   
   
-  <meta name="keywords" content="草稿,工程化,git,eslint">
+  <meta name="keywords" content="修订二,工程化,git,eslint">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -84,64 +83,84 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="DTU前端工程化实践"><a href="#DTU前端工程化实践" class="headerlink" title="DTU前端工程化实践"></a>DTU前端工程化实践</h1><p>年初入职TalkingData，到现在半年有余。感谢TD的充分信任和赋权，使我可以大胆尝试。整个部门几条产品线，如果技术栈、规范不统一，后期产品的迭代会很难进行下去。在组件化、git规范、代码规范和自动化方面引入了很多现成的方案。</p>
-<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>如今的前端开发，已不是简单的页面制作加上jQuery，就能满足业务要求了。前端工程师要面对的不只是简单的网站，而是复杂的web应用。各产品需要更好的用户体验，团队选择了最为复杂的单页应用SPA，需要对代码质量有更高的要求，才能保证产品有好的体验。</p>
-<h3 id="各产品线统一为Vue技术栈"><a href="#各产品线统一为Vue技术栈" class="headerlink" title="各产品线统一为Vue技术栈"></a>各产品线统一为Vue技术栈</h3><p>在前端框架领域，已是React、Angular和Vue三分天下，这些框架为前端组件化提供了很好的支持，团队选择使用Vue技术栈。<br>统一技术栈有很多好处，可以降低不同产品间人员调整的成本，可以在产品间共享组件和模块代码。</p>
-<h3 id="采用组件化的方式快速迭代产品"><a href="#采用组件化的方式快速迭代产品" class="headerlink" title="采用组件化的方式快速迭代产品"></a>采用组件化的方式快速迭代产品</h3><p>产品迭代的速度，很大程度上决定了产品成败。组件化的前端开发理念，可以快速的拼装出产品，每个组件都可以独立升级和替换。<br>前端组件是页面上可复用的UI单元，比如信息区块、页头、页尾、导航等。工程正式开发之前，我们仔细研究了设计图，统计出整个产品包含哪些组件，哪些组件可复用程度更高。<br>优先开发复用度更高的组件，完成后快速拼装出功能页面。不难想到，前端开发的效率取决于设计稿的完整度，设计师提供的设计稿越完整，前端工程师的开发效率会越高。<br>智能数据市场产品（SDMK）在开发初期，就选择了组件化的开发方式，很大的缩短了产品迭代周期。<br>(图片制作： 页面A — 组件A — 页面B)</p>
-<h2 id="git规范化"><a href="#git规范化" class="headerlink" title="git规范化"></a>git规范化</h2><p>团队中的几位工程师分工协作完成不同的功能组件，需要规范的代码管理流程，减少代码冲突和持续的功能集成。</p>
-<h3 id="规范化的git工作流"><a href="#规范化的git工作流" class="headerlink" title="规范化的git工作流"></a>规范化的git工作流</h3><p>高效的开发团队，需要规范化的代码管理流程做保证，团队直接沿用了成熟的开发流程，并采用了每日集成的开发策略。</p>
-<p>在产品开发阶段，每位工程师在自己开发分支下快速开发，每天在固定的时间，由组长将代码集成到daily分支。在集成的过程中，会进行CodeReview，检查代码规范和逻辑的部分。</p>
-<p>完成集成后，执行Jenkins的构建过程。</p>
-<p>产品上线后，进入功能迭代阶段，工程师的dev分支转换为feature分支。</p>
-<p>每天完成计划的部分，定时集成到daily分支，并部署到daily环境。</p>
-<p>大家每天的工作目标明确，成果可见，每天都很有成就感。</p>
+        <h1 id="前端工程化实践"><a href="#前端工程化实践" class="headerlink" title="前端工程化实践"></a>前端工程化实践</h1><p><img src="/2017/08/18/前端工程化实践/bd_logo1.png" alt="logo"><br>年初入职TalkingData，到现在半年有余，是时候回头看看这半年走过的路。感谢TD的充分信任和赋能，使我可以大胆尝试。部门的几条产品线，如果技术栈、规范不统一，很难保证产品的快速迭代。前端工程化属于软件工程范畴，半年中尝试了组件化开发理念、规范了 Git 工作流、Git Commit message、引入了 Airbnb 规范等很多现成的方案。</p>
+<p>整个团队，要经历从组件化到模块化，从引入开源到开源生态贡献的发展道路。</p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>按设计规格制造出机器（单页应用）的零部件（组件）后，就可以快速组装出一部完整的机器。</p>
+<p>将设计稿拆分为一个个职责单一的组件，统计组件可复用的程度，然后工程师按数据开发。<br>像这样从全局出发，统计拆分组件的方式，好处很明显。功能都是由单一职责的组件拼装而成。</p>
+<p>如今的前端开发，已不是简单的页面制作加上jQuery，就能满足业务要求了。前端工程师们要面对的不是简单的网站，而是更复杂的web应用。</p>
+<h3 id="技术架构统一到Vue技术栈"><a href="#技术架构统一到Vue技术栈" class="headerlink" title="技术架构统一到Vue技术栈"></a>技术架构统一到Vue技术栈</h3><p>可以说，Vue是为组件化而生的View层框架。它为应用的组件化，提供了很好的支持，还有完善的脚手架工具可用。<br>团队统一技术栈有很多好处，可以降低产品间人员调动的成本、复用组件和模块的代码。</p>
+<p>到目前为止，团队研发的大部分产品，完成了Vue的重构迁移。</p>
+<h3 id="组件化开发过程"><a href="#组件化开发过程" class="headerlink" title="组件化开发过程"></a>组件化开发过程</h3><p>现如今，产品更新迭代的速度，很大程度上决定了产品成败。组件化的开发理念，可以快速的拼装出产品，而且每个组件都可以独立的升级或替换。</p>
+<p>在产品正式开发之前，我们仔细研究设计图，统计出整个产品包含的组件，哪些组件可复用度更高，<br>优先开发这些组件。一旦这些工作完成，就能快速拼装出产品功能页面。</p>
+<p>不难想到，前端开发的效率取决于设计稿的完整度，设计师提供的设计稿越完整，前端工程师的开发效率会越高。</p>
+<p>在智能数据市场产品（SDMK）的开发初期，选择了组件化的开发方式，很大的缩短了产品迭代周期。</p>
+<p>(图片制作： 页面A — 组件A — 页面B)</p>
+<h2 id="源代码管理要规范化"><a href="#源代码管理要规范化" class="headerlink" title="源代码管理要规范化"></a>源代码管理要规范化</h2><p>产品团队中，几位工程师分工协作，开发不同的功能组件。各功能组件相互依赖关联，只有规范化的源代码管理流程，才能避免了因多人协作，而导致的风险和保证产品的快速持续的功能集成。</p>
+<h3 id="规范化-Git-工作流"><a href="#规范化-Git-工作流" class="headerlink" title="规范化 Git 工作流"></a>规范化 Git 工作流</h3><p>高效的开发团队，需要规范化的代码管理流程做保证，团队直接沿用了成熟的 Git 分支开发流程，并采用了每日集成的开发策略。</p>
+<p>在产品的攻坚和优化阶段，我们采用了不同的分支开发策略。</p>
+<p>在攻坚阶段，每位工程师在自己的开发分支，完成分配的功能组件。每天在固定的时间，将大家的代码 commit 到 daily 分支上，同时还会进行 CodeReview，做规范性检查和业务逻辑的优化等。</p>
+<p>在产品上线进入产品的优化阶段，这个时候大家会转换为 Feature 分支，同样会进行每天的 Daily 过程。</p>
+<p>如此，大家每天的工作目标明确、成果可见，每天都很有成就感。</p>
 <p>（图片：git工作流图）</p>
-<h3 id="git提交规范"><a href="#git提交规范" class="headerlink" title="git提交规范"></a>git提交规范</h3><p>在每天构建的过程中，要对代码进行快速Review，一般会快速浏览gitlab中的提交记录，规范化的Commit message，为每天的Code Review提供了保证。</p>
-<p>一次代码提交应该做到原子性：完成一个bug的修改、一个功能的文档、一次重构等等。</p>
-<p>好的代码提交说明，应该完全匹配修改的内容，最好能够包含对修改的部分、类型给出明确的说明。</p>
-<p>（gitlab截图：）</p>
-<blockquote>
-<p>fix(service):服务编辑时没有去掉可见性字段校验</p>
-</blockquote>
-<p>我们直接引入了广泛使用的Angular提交规范，比较合理和系统化，并且有现成配套的工具。</p>
-<p>（工具图片）</p>
-<p>Angular规范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feat：新功能（feature）</div><div class="line">fix：修补bug</div><div class="line">docs：文档（documentation）</div><div class="line">style： 格式（不影响代码运行的变动）</div><div class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</div><div class="line">test：增加测试</div><div class="line">chore：构建过程或辅助工具的变动</div></pre></td></tr></table></figure></p>
-<p>格式化的Commit message，有几个好处。</p>
+<h3 id="规范化-Git-Commit-message"><a href="#规范化-Git-Commit-message" class="headerlink" title="规范化 Git Commit message"></a>规范化 Git Commit message</h3><p>一次代码提交，应该尽量做到原子性，比如：完成了一次 Bugfix、完善某功能文档、对某个方法做了重构等。而每次代码提交，都应该提供格式化的 Commit message。</p>
+<p>格式化的 Commit message，有很多个好处：</p>
 <ol>
-<li>提供更多的历史信息，方便代码CodeReview。</li>
-<li>可以过滤commit，快速查找信息。</li>
-<li>还可以由提交说明生成产品的changelog。</li>
+<li>提供更多的历史信息，方便代码 CodeReview。</li>
+<li>可以过滤不同类型的 Commit，方便快速查找信息。</li>
+<li>还可以由 Commit message 生成产品的 Changelog。</li>
 </ol>
-<p>（Jenkins截图）</p>
-<h2 id="代码规范化"><a href="#代码规范化" class="headerlink" title="代码规范化"></a>代码规范化</h2><p>组建一只规范化的前端团队，是我转型技术管理第一目标：产品代码看起来像是是由一个人写的，代码和注释风格要统一。</p>
-<h3 id="JavaScript的语言升级和规范化"><a href="#JavaScript的语言升级和规范化" class="headerlink" title="JavaScript的语言升级和规范化"></a>JavaScript的语言升级和规范化</h3><p>过于灵活的ES5，并不适合企业级web应用开发。</p>
-<p>由于产品存在历史代码，所以大家需要循序渐进的由ES5迁移到ES6下，比如新功能代码，禁止使用var声明变量，而改为使用let或const。</p>
-<p>对于函数的声明，鼓励去掉function关键字，更多的使用箭头函数，尝试使用函数的默认值；</p>
-<p>用模版字符串替换掉之前的字符串拼接；</p>
-<p>逐渐深入使用ES6的更多的特性，整个迁移过程平滑自然。</p>
-<p>在引入ES6语言的同时，引入了目前广泛使用和成熟的Airbnb语言规范，有现成的规</p>
-<p>范文档。引入eslint工具，保证大家代码的规范性。在编辑和“编译”阶段，项目中引入相关eslint组件，自动检查代码的风格是否符合规范。</p>
-<p>对不符合规范的代码，会给出错误提示，并不能执行代码。</p>
-<p>大家在学习Airbnb的规范的同时，对照ES5和ES6的写法，快速完成语言的切换。</p>
-<p>下面一段代码示例，实现数据的复制，可以发现ES6代码会更简洁高效。</p>
+<p>在每天的 Daily 过程中，快速浏览 Gitlab 的提交记录中的 Commit message，可以高效的完成 Code Review。</p>
+<p>团队直接引入了广泛使用的Angular提交规范，比较合理和系统化，并且有现成配套的工具。</p>
+<p>Angular规范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feat：新功能（feature）</div><div class="line">fix：修补bug</div><div class="line">docs：文档（documentation）</div><div class="line">style： 格式（不影响代码运行的变动）</div><div class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</div><div class="line">test：增加测试</div><div class="line">chore：构建过程或辅助工具的变动</div></pre></td></tr></table></figure></p>
+<p>（工具图片、Jenkins截图）</p>
+<h2 id="代码风格的规范化"><a href="#代码风格的规范化" class="headerlink" title="代码风格的规范化"></a>代码风格的规范化</h2><p>阅读规范化产品的代码，最直观感受是：所有代码，要看起来像是是出自一人之手，无论功能实现，还是代码注释。</p>
+<p>在进行规范化之前，团队需要将主要开发语言迁移到 ES6。把匕首换成宝剑，提高了攻城成功的把握。</p>
+<h3 id="迁移到-ES6-和-SASS"><a href="#迁移到-ES6-和-SASS" class="headerlink" title="迁移到 ES6 和 SASS"></a>迁移到 ES6 和 SASS</h3><p>过于灵活的ES5，并不适合开发企业级 Web 应用。</p>
+<p>因为产品存在历史 ES5 代码，大家需要循序渐进的完成ES6的迁移，比如：</p>
+<ol>
+<li>新功能代码，禁止使用 var  关键字声明变量，而是改为使用let或const；</li>
+<li>对于函数的声明，鼓励去掉 function 关键字，更多的使用箭头函数和使用函数的默认值；</li>
+<li>用模版字符串替换掉之前的字符串拼接；</li>
+</ol>
+<p>像这样，逐渐深入更多的ES6特性。从实际效果看，各产品线代码迁移的过程十分地平滑自然。</p>
+<p>下面一段代码示例，实现数据的复制，可以发现ES6代码会更简洁高效：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">const</span> len = items.length;</div><div class="line"><span class="keyword">const</span> itemsCopy = [];</div><div class="line"><span class="keyword">let</span> i;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i += <span class="number">1</span>) &#123;</div><div class="line">  itemsCopy[i] = items[i];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">const</span> itemsCopy = [...items];</div></pre></td></tr></table></figure>
-<h3 id="CSS预处理器SASS"><a href="#CSS预处理器SASS" class="headerlink" title="CSS预处理器SASS"></a>CSS预处理器SASS</h3><p>样式预处理器SASS，为CSS带来了编程语言的能力，比如变量、函数和模块化。使用SASS能够很大程度上提高代码的复用度。</p>
-<p>JavaScript有eslint检查工具，对于SASS可以使用stylelint检查代码，</p>
-<p>遗憾的是社区开源的编辑器插件不是很完善，只找到了atom版本。</p>
-<h3 id="HTMl的规范化"><a href="#HTMl的规范化" class="headerlink" title="HTMl的规范化"></a>HTMl的规范化</h3><p>技术架构统一为Vue2.x，很遗憾没有找到Vue中HTML的规范化工具，后期会进行引入或研究开源。</p>
-<h2 id="组件化到模块化再到开源贡献"><a href="#组件化到模块化再到开源贡献" class="headerlink" title="组件化到模块化再到开源贡献"></a>组件化到模块化再到开源贡献</h2><p>Vue的组件化能力，极大的缩短了产品开发周期，但回顾过去产品间的代码复用是不够的。<br>每个产品都有自己的一套time-format模块，不同产品线，重复劳动太多。</p>
+<p>在 CSS 方面，各产品统一选择了 SASS 预处理器。为 CSS 引入了，许多编程语言特性和模块化的能力。</p>
+<h3 id="引入-Airbnb-的-Javascirpt-和-CSS-规范"><a href="#引入-Airbnb-的-Javascirpt-和-CSS-规范" class="headerlink" title="引入 Airbnb 的 Javascirpt 和 CSS 规范"></a>引入 Airbnb 的 Javascirpt 和 CSS 规范</h3><p>感谢 Airbnb 开源了内部的语言规范，免去了大家设计和维护规范文档的麻烦。</p>
+<p>团队采用了，目前广泛使用和成熟的 Airbnb 语言规范，有现成的规范文档和工具可用。</p>
+<p>只有工具才能约束大家的编码习惯，团队引入了 eslint 检查工具，配合 Airbnb的规范，保证了大家代码的规范性。</p>
+<p>在代码编辑和“编译”阶段，eslint 插件会自动化检查产品代码是否符合规范。对于不符合规范的代码，会抛出错误提示，阻止代码的执行。</p>
+<p>除了代码规范的约束，eslint 还为解释型的 js 带来了部分编译特性，比如：</p>
+<ol>
+<li>项目中声明了没有用的变量、函数和语句，eslint 会给出错误提示；</li>
+<li>代码中使用了具有一定风险的 for in 循环，也会给出修改的建议；</li>
+</ol>
+<p>在学习 Airbnb 规范的过程中，对照 ES5 和 ES6 的语法的不同，快速完成了语言的切换。</p>
+<p>对于 CSS 预处理器SASS，我们尝试了 stylelint 工具，配合 Airbnb 开源的 CSS 规范。但遗憾的是，社区开源的相关工具并不完善，编辑器只找到了 atom 的版本。</p>
+<h2 id="文档的规范化"><a href="#文档的规范化" class="headerlink" title="文档的规范化"></a>文档的规范化</h2><p>工程师们大都不喜欢写文档。</p>
+<p>而实际情况是，文档的更新，一般都是滞后的。比如接口新增了参数，文档也需要做对应的修改，而这带来了一定的维护成本。</p>
+<h3 id="源代码即文档"><a href="#源代码即文档" class="headerlink" title="源代码即文档"></a>源代码即文档</h3><p>组件和模块的设计拆分，应该要符合简单的单一职责原则。这样源代码要能够做到自解释，文件名表明一个文件的功能、方法名称解释该方法的功能等。</p>
+<p>好的文件名称、方法名称起到了文档的作用。</p>
+<p>对于接口文档，我们设计了声明式的 model 层 apischema，一个 model 的定义，就是一系列接口的文档。</p>
+<p>从代码中直观的看出接口协议、地址和参数规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// define api</div><div class="line">export const addInternalGroup = schema.post(&apos;/path/to/action&apos;, &#123;</div><div class="line">  name: &#123; type: String, required: true &#125;,</div><div class="line">  info: &#123; type: String, required: true &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// use api</div><div class="line">addInternalGroup(&#123; name: &apos;xxx&apos;, info: &apos;xxx&apos; &#125;).then((json) =&gt; &#123;</div><div class="line">  log(json);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>apischema： <a href="https://www.npmjs.com/package/apischema" target="_blank" rel="external">https://www.npmjs.com/package/apischema</a></p>
+<p>除了代码，团队还会有很多东西要沉淀记录，必要的文档还是要有的。</p>
+<h3 id="用-markdown-写周报"><a href="#用-markdown-写周报" class="headerlink" title="用 markdown 写周报"></a>用 markdown 写周报</h3><p>如今，除了编程语言，markdown 成为了工程师必须要掌握的硬技能。团队的周报使用 markdown 记录到 gitlab 中。</p>
+<h3 id="大前端周刊"><a href="#大前端周刊" class="headerlink" title="大前端周刊"></a>大前端周刊</h3><p>在知识分享方面，团队在每周五，收集大家读到的优秀文章，形成周刊。</p>
+<p>大前端周刊：<a href="https://talkingdata.github.io/fsd/" target="_blank" rel="external">https://talkingdata.github.io/fsd/</a></p>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><h3 id="从组件化到模块化"><a href="#从组件化到模块化" class="headerlink" title="从组件化到模块化"></a>从组件化到模块化</h3><p>Vue的组件化能力，极大的缩短了产品开发周期，但回顾过去产品间的代码复用是不够的。<br>每个产品都有自己的一套time-format模块，不同产品线，重复劳动太多。</p>
 <p>团队不仅仅需要组件化，我们需要将公共代码进行模块化，感谢Node社区。</p>
 <p>各个产品引入了iView，减少了很多重复的劳动，为大家竖立了榜样。</p>
 <p>希望团队成员都适度参与到开源社区的贡献，大家都是前端生态的一部分。</p>
 <p>不止于业务，向前一步。</p>
 <p>在完成功能开发后，多一些思考，想一下开发的功能其他开发者是不是有可能会用到。</p>
-<h2 id="源代码即文档"><a href="#源代码即文档" class="headerlink" title="源代码即文档"></a>源代码即文档</h2><p>设计了声明式的model层，从代码中直观的看到接口协议，地址和参数规则等。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// define api</div><div class="line">export const addInternalGroup = schema.post(&apos;/path/to/action&apos;, &#123;</div><div class="line">  name: &#123; type: String, required: true &#125;,</div><div class="line">  info: &#123; type: String, required: true &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// use api</div><div class="line">addInternalGroup(&#123; name: &apos;xxx&apos;, info: &apos;xxx&apos; &#125;).then((json) =&gt; &#123;</div><div class="line">  log(json);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>开源了apischema <a href="https://www.npmjs.com/package/apischema" target="_blank" rel="external">https://www.npmjs.com/package/apischema</a></p>
-<h2 id="从前端到大前端之路"><a href="#从前端到大前端之路" class="headerlink" title="从前端到大前端之路"></a>从前端到大前端之路</h2><p>工程师要竖立前端大局观，从不同的角度考虑技术方案。</p>
+<h3 id="从前端到大前端"><a href="#从前端到大前端" class="headerlink" title="从前端到大前端"></a>从前端到大前端</h3><p>工程师要竖立前端大局观，从不同的角度考虑技术方案。</p>
 <p>用前端的方案实现产品的灰度分流和配置。</p>
 <p>基于koa2开源企业级Node解决方案Flclover，目前稳定在0.7.x版本，已经在内部两个项目完成了验证。</p>
-<p>后期会优先在分析线落地。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>在前端工程化方面还有很长的路要走，持续学习和进步。</p>
+<h3 id="从引入开源到开源生态共建"><a href="#从引入开源到开源生态共建" class="headerlink" title="从引入开源到开源生态共建"></a>从引入开源到开源生态共建</h3><p>产品中引入了大量的开源模块和工具：Nodejs、NPM、Webpack、Vue和iView等。遥想开始入行前端的几年，在开发业务代码之前，需要花费大量的时间和精力，开发公共组件、模块加载器和打包工具等。如今所有这些，都可以在社区找到解决方案。</p>
+<p>每一位懂得感恩的工程师，都应该参与到开源生态的共建。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>团队在前端工程化方面，还有很长的路要走。</p>
 <p>加油2017！</p>
 
       
@@ -159,7 +178,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/草稿/">草稿</a><a href="/tags/工程化/">工程化</a><a href="/tags/git/">git</a><a href="/tags/eslint/">eslint</a>
+        <a href="/tags/修订二/">修订二</a><a href="/tags/工程化/">工程化</a><a href="/tags/git/">git</a><a href="/tags/eslint/">eslint</a>
     </span>
     
 
