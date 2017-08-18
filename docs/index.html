@@ -79,7 +79,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="前端工程化实践"><a href="#前端工程化实践" class="headerlink" title="前端工程化实践"></a>前端工程化实践</h1><p><img src="/2017/08/18/前端工程化实践/bd_logo1.png" alt="logo"><br>年初入职TalkingData，到现在半年有余，是时候回头看看这半年走过的路。感谢TD的充分信任和赋能，使我可以大胆尝试。部门的几条产品线，如果技术栈、规范不统一，很难保证产品的快速迭代。前端工程化属于软件工程范畴，半年中尝试了组件化开发理念、规范了 Git 工作流、Git Commit message、引入了 Airbnb 规范等很多现成的方案。</p>
+        <h1 id="前端工程化实践"><a href="#前端工程化实践" class="headerlink" title="前端工程化实践"></a>前端工程化实践</h1><p>年初入职TalkingData，到现在半年有余，是时候回头看看这半年走过的路。感谢TD的充分信任和赋能，使我可以大胆尝试。部门的几条产品线，如果技术栈、规范不统一，很难保证产品的快速迭代。前端工程化属于软件工程范畴，半年中尝试了组件化开发理念、规范了 Git 工作流、Git Commit message、引入了 Airbnb 规范等很多现成的方案。</p>
 <p>整个团队，要经历从组件化到模块化，从引入开源到开源生态贡献的发展道路。</p>
 <h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><p>按设计规格制造出机器（单页应用）的零部件（组件）后，就可以快速组装出一部完整的机器。</p>
 <p>将设计稿拆分为一个个职责单一的组件，统计组件可复用的程度，然后工程师按数据开发。<br>像这样从全局出发，统计拆分组件的方式，好处很明显。功能都是由单一职责的组件拼装而成。</p>
@@ -90,7 +90,7 @@
 <p>在产品正式开发之前，我们仔细研究设计图，统计出整个产品包含的组件，哪些组件可复用度更高，<br>优先开发这些组件。一旦这些工作完成，就能快速拼装出产品功能页面。</p>
 <p>不难想到，前端开发的效率取决于设计稿的完整度，设计师提供的设计稿越完整，前端工程师的开发效率会越高。</p>
 <p>在智能数据市场产品（SDMK）的开发初期，选择了组件化的开发方式，很大的缩短了产品迭代周期。</p>
-<p>(图片制作： 页面A — 组件A — 页面B)</p>
+<p>(图片： 页面A — 组件A — 页面B)</p>
 <h2 id="源代码管理要规范化"><a href="#源代码管理要规范化" class="headerlink" title="源代码管理要规范化"></a>源代码管理要规范化</h2><p>产品团队中，几位工程师分工协作，开发不同的功能组件。各功能组件相互依赖关联，只有规范化的源代码管理流程，才能避免了因多人协作，而导致的风险和保证产品的快速持续的功能集成。</p>
 <h3 id="规范化-Git-工作流"><a href="#规范化-Git-工作流" class="headerlink" title="规范化 Git 工作流"></a>规范化 Git 工作流</h3><p>高效的开发团队，需要规范化的代码管理流程做保证，团队直接沿用了成熟的 Git 分支开发流程，并采用了每日集成的开发策略。</p>
 <p>在产品的攻坚和优化阶段，我们采用了不同的分支开发策略。</p>
@@ -108,7 +108,9 @@
 <p>在每天的 Daily 过程中，快速浏览 Gitlab 的提交记录中的 Commit message，可以高效的完成 Code Review。</p>
 <p>团队直接引入了广泛使用的Angular提交规范，比较合理和系统化，并且有现成配套的工具。</p>
 <p>Angular规范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feat：新功能（feature）</div><div class="line">fix：修补bug</div><div class="line">docs：文档（documentation）</div><div class="line">style： 格式（不影响代码运行的变动）</div><div class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</div><div class="line">test：增加测试</div><div class="line">chore：构建过程或辅助工具的变动</div></pre></td></tr></table></figure></p>
-<p>（工具图片、Jenkins截图）</p>
+<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-message.png" alt="commit-message"></p>
+<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-demo.png" alt="commit-demo"></p>
+<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/jenkins-demo.png" alt="jenkins-demo"></p>
 <h2 id="代码风格的规范化"><a href="#代码风格的规范化" class="headerlink" title="代码风格的规范化"></a>代码风格的规范化</h2><p>阅读规范化产品的代码，最直观感受是：所有代码，要看起来像是是出自一人之手，无论功能实现，还是代码注释。</p>
 <p>在进行规范化之前，团队需要将主要开发语言迁移到 ES6。把匕首换成宝剑，提高了攻城成功的把握。</p>
 <h3 id="迁移到-ES6-和-SASS"><a href="#迁移到-ES6-和-SASS" class="headerlink" title="迁移到 ES6 和 SASS"></a>迁移到 ES6 和 SASS</h3><p>过于灵活的ES5，并不适合开发企业级 Web 应用。</p>
@@ -145,6 +147,7 @@
 <h3 id="用-markdown-写周报"><a href="#用-markdown-写周报" class="headerlink" title="用 markdown 写周报"></a>用 markdown 写周报</h3><p>如今，除了编程语言，markdown 成为了工程师必须要掌握的硬技能。团队的周报使用 markdown 记录到 gitlab 中。</p>
 <h3 id="大前端周刊"><a href="#大前端周刊" class="headerlink" title="大前端周刊"></a>大前端周刊</h3><p>在知识分享方面，团队在每周五，收集大家读到的优秀文章，形成周刊。</p>
 <p>大前端周刊：<a href="https://talkingdata.github.io/fsd/" target="_blank" rel="external">https://talkingdata.github.io/fsd/</a></p>
+<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/fsd.png" alt="fsd"></p>
 <h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><h3 id="从组件化到模块化"><a href="#从组件化到模块化" class="headerlink" title="从组件化到模块化"></a>从组件化到模块化</h3><p>Vue的组件化能力，极大的缩短了产品开发周期，但回顾过去产品间的代码复用是不够的。<br>每个产品都有自己的一套time-format模块，不同产品线，重复劳动太多。</p>
 <p>团队不仅仅需要组件化，我们需要将公共代码进行模块化，感谢Node社区。</p>
 <p>各个产品引入了iView，减少了很多重复的劳动，为大家竖立了榜样。</p>
