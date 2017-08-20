@@ -92,14 +92,13 @@
 <p>在产品正式开发之前，我们仔细研究设计图，统计出整个产品包含的组件，哪些组件可复用度更高，<br>优先开发这些组件。一旦这些工作完成，就能快速拼装出产品功能页面。</p>
 <p>不难想到，前端开发的效率取决于设计稿的完整度，设计师提供的设计稿越完整，前端工程师的开发效率会越高。</p>
 <p>在智能数据市场产品（SDMK）的开发初期，选择了组件化的开发方式，很大的缩短了产品迭代周期。</p>
-<p>(图片： 页面A — 组件A — 页面B)</p>
 <h2 id="源代码管理要规范化"><a href="#源代码管理要规范化" class="headerlink" title="源代码管理要规范化"></a>源代码管理要规范化</h2><p>产品团队中，几位工程师分工协作，开发不同的功能组件。各功能组件相互依赖关联，只有规范化的源代码管理流程，才能避免了因多人协作，而导致的风险和保证产品的快速持续的功能集成。</p>
 <h3 id="规范化-Git-工作流"><a href="#规范化-Git-工作流" class="headerlink" title="规范化 Git 工作流"></a>规范化 Git 工作流</h3><p>高效的开发团队，需要规范化的代码管理流程做保证，团队直接沿用了成熟的 Git 分支开发流程，并采用了每日集成的开发策略。</p>
 <p>在产品的攻坚和优化阶段，我们采用了不同的分支开发策略。</p>
 <p>在攻坚阶段，每位工程师在自己的开发分支，完成分配的功能组件。每天在固定的时间，将大家的代码 commit 到 daily 分支上，同时还会进行 CodeReview，做规范性检查和业务逻辑的优化等。</p>
 <p>在产品上线进入产品的优化阶段，这个时候大家会转换为 Feature 分支，同样会进行每天的 Daily 过程。</p>
 <p>如此，大家每天的工作目标明确、成果可见，每天都很有成就感。</p>
-<p>（图片：git工作流图）</p>
+<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/git-workflow.png" alt="git workflow"><br>(图片来源：Git版本控制与工作流，by Sam_Lau)</p>
 <h3 id="规范化-Git-Commit-message"><a href="#规范化-Git-Commit-message" class="headerlink" title="规范化 Git Commit message"></a>规范化 Git Commit message</h3><p>一次代码提交，应该尽量做到原子性，比如：完成了一次 Bugfix、完善某功能文档、对某个方法做了重构等。而每次代码提交，都应该提供格式化的 Commit message。</p>
 <p>格式化的 Commit message，有很多个好处：</p>
 <ol>
@@ -109,10 +108,10 @@
 </ol>
 <p>在每天的 Daily 过程中，快速浏览 Gitlab 的提交记录中的 Commit message，可以高效的完成 Code Review。</p>
 <p>团队直接引入了广泛使用的Angular提交规范，比较合理和系统化，并且有现成配套的工具。</p>
-<p>Angular规范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feat：新功能（feature）</div><div class="line">fix：修补bug</div><div class="line">docs：文档（documentation）</div><div class="line">style： 格式（不影响代码运行的变动）</div><div class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</div><div class="line">test：增加测试</div><div class="line">chore：构建过程或辅助工具的变动</div></pre></td></tr></table></figure></p>
 <p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-message.png" alt="commit-message"></p>
+<p>Angular规范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feat：新功能（feature）</div><div class="line">fix：修补bug</div><div class="line">docs：文档（documentation）</div><div class="line">style： 格式（不影响代码运行的变动）</div><div class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</div><div class="line">test：增加测试</div><div class="line">chore：构建过程或辅助工具的变动</div></pre></td></tr></table></figure></p>
 <p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-demo.png" alt="commit-demo"></p>
-<p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/jenkins-demo.png" alt="jenkins-demo"></p>
+<p>每次执行 Jenkins 构建，还可以明确构建修改的内容。<br><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/jenkins-demo.png" alt="jenkins-demo"></p>
 <h2 id="代码风格的规范化"><a href="#代码风格的规范化" class="headerlink" title="代码风格的规范化"></a>代码风格的规范化</h2><p>阅读规范化产品的代码，最直观感受是：所有代码，要看起来像是是出自一人之手，无论功能实现，还是代码注释。</p>
 <p>在进行规范化之前，团队需要将主要开发语言迁移到 ES6。把匕首换成宝剑，提高了攻城成功的把握。</p>
 <h3 id="迁移到-ES6-和-SASS"><a href="#迁移到-ES6-和-SASS" class="headerlink" title="迁移到 ES6 和 SASS"></a>迁移到 ES6 和 SASS</h3><p>过于灵活的ES5，并不适合开发企业级 Web 应用。</p>
@@ -166,6 +165,9 @@
 <p>团队鼓励大家都参与到开源生态的共建，形成良性的开源闭环。</p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>半年来，团队完成了规范的推广和技术架构的统一，这些为团队规模的迅速扩大，打好了基础。接下来，团队还要普及渐进式的开发方式，完成从纯前端到大前端团队的过度。</p>
 <p>加油 2017！</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/git-workflow.html</a></li>
+</ol>
 
       
     </div>

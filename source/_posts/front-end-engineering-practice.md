@@ -38,9 +38,6 @@ tags: [修订三,工程化,git,eslint]
 
 在智能数据市场产品（SDMK）的开发初期，选择了组件化的开发方式，很大的缩短了产品迭代周期。
 
-(图片： 页面A --- 组件A --- 页面B)
-
-
 ## 源代码管理要规范化
 
 产品团队中，几位工程师分工协作，开发不同的功能组件。各功能组件相互依赖关联，只有规范化的源代码管理流程，才能避免了因多人协作，而导致的风险和保证产品的快速持续的功能集成。
@@ -56,7 +53,8 @@ tags: [修订三,工程化,git,eslint]
 
 如此，大家每天的工作目标明确、成果可见，每天都很有成就感。
 
-（图片：git工作流图）
+![git workflow](http://7xocsy.com1.z0.glb.clouddn.com/blog/git-workflow.png)
+(图片来源：Git版本控制与工作流，by Sam_Lau)
 
 ### 规范化 Git Commit message
 
@@ -72,6 +70,8 @@ tags: [修订三,工程化,git,eslint]
 
 团队直接引入了广泛使用的Angular提交规范，比较合理和系统化，并且有现成配套的工具。
 
+![commit-message](http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-message.png)
+
 Angular规范：
 ```
 feat：新功能（feature）
@@ -82,11 +82,9 @@ refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 test：增加测试
 chore：构建过程或辅助工具的变动
 ```
-
-![commit-message](http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-message.png)
-
 ![commit-demo](http://7xocsy.com1.z0.glb.clouddn.com/blog/commit-demo.png)
 
+每次执行 Jenkins 构建，还可以明确构建修改的内容。
 ![jenkins-demo](http://7xocsy.com1.z0.glb.clouddn.com/blog/jenkins-demo.png)
 
 
@@ -226,3 +224,6 @@ Hats off to Github.
 半年来，团队完成了规范的推广和技术架构的统一，这些为团队规模的迅速扩大，打好了基础。接下来，团队还要普及渐进式的开发方式，完成从纯前端到大前端团队的过度。
 
 加油 2017！
+
+## 参考资料
+1. http://www.ruanyifeng.com/blog/2015/12/git-workflow.html
