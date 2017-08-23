@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开源Web框架Flclover | X. Notes</title>
+
+  
+  <meta name="author" content="X. W.">
+  
+
+  
+  <meta name="description" content="设计初衷TODO Node 中间层
+设计原则企业级Web框架
+Show me the code
+app/router.js
+
+123module.exports = (router, controller) =&amp;gt; &amp;#123;  router.get(&#39;/&#39;, controller.home.">
+  
+
+  
+  
+  <meta name="keywords" content="草稿,node,koa,flclover,async">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="开源Web框架Flclover"/>
+
+  <meta property="og:site_name" content="X. Notes"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="X. Notes" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">X. Notes</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>开源Web框架Flclover</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/08/23/flclover-introduction/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-08-23T15:10:01.000Z">
+          2017-08-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="设计初衷"><a href="#设计初衷" class="headerlink" title="设计初衷"></a>设计初衷</h2><p>TODO Node 中间层</p>
+<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p>企业级Web框架</p>
+<h2 id="Show-me-the-code"><a href="#Show-me-the-code" class="headerlink" title="Show me the code"></a>Show me the code</h2><ul>
+<li>app/router.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">router, controller</span>) =&gt;</span> &#123;</div><div class="line">  router.get(<span class="string">'/'</span>, controller.home.index);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>app/controller/home.js</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.index = <span class="keyword">async</span> (ctx) =&gt; &#123;</div><div class="line">  ctx.body = <span class="string">'Hello, Flclover!'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/flclover.png" alt="flclover"></p>
+<h2 id="常用中间件"><a href="#常用中间件" class="headerlink" title="常用中间件"></a>常用中间件</h2><h3 id="代理中间件-flclover-proxy"><a href="#代理中间件-flclover-proxy" class="headerlink" title="代理中间件 flclover-proxy"></a>代理中间件 flclover-proxy</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dt = <span class="keyword">await</span> ctx.proxy(&#123;</div><div class="line">   <span class="attr">data</span>: &#123; <span class="attr">source</span>: data() &#125;,</div><div class="line">   <span class="attr">data1</span>: &#123; <span class="attr">source</span>: data1(), <span class="attr">cache</span>: <span class="number">5</span> &#125;,</div><div class="line">   <span class="attr">data2</span>: &#123; <span class="attr">source</span>: data2(), <span class="attr">cache</span>: <span class="number">10</span> &#125;,</div><div class="line">   <span class="attr">data3</span>: &#123; <span class="attr">source</span>: data3(), <span class="attr">cache</span>: <span class="number">15</span> &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="定时任务中间件-flclover-schedule"><a href="#定时任务中间件-flclover-schedule" class="headerlink" title="定时任务中间件 flclover-schedule"></a>定时任务中间件 flclover-schedule</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">app</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">schedule</span>: &#123;</div><div class="line">      <span class="attr">interval</span>: <span class="string">'1s'</span>,</div><div class="line">      <span class="attr">immediate</span>: <span class="literal">true</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="keyword">async</span> task(service) &#123;</div><div class="line">      <span class="comment">// do something</span></div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>
+<li><a href="https://github.com/TalkingData/flclover/issues" target="_blank" rel="external">意见反馈</a></li>
+<li><a href="https://github.com/search?q=topic%3Aflclover-middleware&amp;type=Repositories" target="_blank" rel="external">中间件列表</a></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/草稿/">草稿</a><a href="/tags/node/">node</a><a href="/tags/koa/">koa</a><a href="/tags/flclover/">flclover</a><a href="/tags/async/">async</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 X. W.
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
