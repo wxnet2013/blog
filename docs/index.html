@@ -59,6 +59,56 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/10/25/tangram-page-layout-platform/"><span>组件仓库和页面拼装平台</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/25/tangram-page-layout-platform/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-25T03:35:30.000Z">
+          2017-10-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/tangram-flow.png" alt="tangram"></p>
+<h2 id="需要考虑的几个要素"><a href="#需要考虑的几个要素" class="headerlink" title="需要考虑的几个要素"></a>需要考虑的几个要素</h2><p>现有组件复用问题，要考虑现有 Vue 组件怎么复用到平台。<br>环境依赖问题，前端独立，不应该依赖数据库等。<br>拼装好的页面如何整合到现有项目。</p>
+<h2 id="组件规则"><a href="#组件规则" class="headerlink" title="组件规则"></a>组件规则</h2><p>渐进式迁移组件，现有组件只需要增加一个描述文件, 就能用于拼装平台。<br>独立发布组件，不同页面可依赖不同的组件版本。<br>组件可自由依赖 iView、element、v-charts等第三方组件。</p>
+<h2 id="拼装和布局平台"><a href="#拼装和布局平台" class="headerlink" title="拼装和布局平台"></a>拼装和布局平台</h2><p>适度灵活的布局。<br>能够简单可靠的适应不同尺寸的屏幕。</p>
+<h2 id="维护性保证"><a href="#维护性保证" class="headerlink" title="维护性保证"></a>维护性保证</h2><p>单向数据流，操作 Ui 触发事件，修改 DataTree。<br>数据变化驱动UI变化。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/08/23/flclover-introduction/"><span>开源Web框架Flclover</span></a></h3>
     
   
@@ -89,7 +139,7 @@
 <li>app/controller/home.js</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.index = <span class="keyword">async</span> (ctx) =&gt; &#123;</div><div class="line">  ctx.body = <span class="string">'Hello, Flclover!'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/flclover.png" alt="flclover"></p>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="http://7xocsy.com1.z0.glb.clouddn.com/blog/flclover.png" alt="flclover"><br><img src="http://7xocsy.com1.z0.glb.clouddn.com/plug-in.png" alt="plug-in"></p>
 <h2 id="常用中间件"><a href="#常用中间件" class="headerlink" title="常用中间件"></a>常用中间件</h2><h3 id="代理中间件-flclover-proxy"><a href="#代理中间件-flclover-proxy" class="headerlink" title="代理中间件 flclover-proxy"></a>代理中间件 flclover-proxy</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dt = <span class="keyword">await</span> ctx.proxy(&#123;</div><div class="line">   <span class="attr">data</span>: &#123; <span class="attr">source</span>: data() &#125;,</div><div class="line">   <span class="attr">data1</span>: &#123; <span class="attr">source</span>: data1(), <span class="attr">cache</span>: <span class="number">5</span> &#125;,</div><div class="line">   <span class="attr">data2</span>: &#123; <span class="attr">source</span>: data2(), <span class="attr">cache</span>: <span class="number">10</span> &#125;,</div><div class="line">   <span class="attr">data3</span>: &#123; <span class="attr">source</span>: data3(), <span class="attr">cache</span>: <span class="number">15</span> &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="定时任务中间件-flclover-schedule"><a href="#定时任务中间件-flclover-schedule" class="headerlink" title="定时任务中间件 flclover-schedule"></a>定时任务中间件 flclover-schedule</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">app</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">schedule</span>: &#123;</div><div class="line">      <span class="attr">interval</span>: <span class="string">'1s'</span>,</div><div class="line">      <span class="attr">immediate</span>: <span class="literal">true</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="keyword">async</span> task(service) &#123;</div><div class="line">      <span class="comment">// do something</span></div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>

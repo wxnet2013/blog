@@ -29,6 +29,7 @@ exports.index = async (ctx) => {
 
 ## 架构图
 ![flclover](http://7xocsy.com1.z0.glb.clouddn.com/blog/flclover.png)
+![plug-in](http://7xocsy.com1.z0.glb.clouddn.com/plug-in.png)
 
 ## 常用中间件
 ### 代理中间件 flclover-proxy
